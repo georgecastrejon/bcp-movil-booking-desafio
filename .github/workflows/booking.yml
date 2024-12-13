@@ -20,6 +20,11 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
+      - name: Ensure cucumber-reports directory exists before installation
+        run: |
+          mkdir -p target/cucumber-reports
+          echo '{}' > target/cucumber-reports/cucumber.json
+
       - name: Install dependencies
         run: mvn install -DskipTests -Dmaven.test.skip=true
 
@@ -29,17 +34,20 @@ jobs:
       - name: Run cucumber tests
         run: mvn clean verify
 
+      - name: Debug cucumber-reports content
+        run: ls -la target/cucumber-reports
+
       - name: Upload cucumber Reports
         uses: actions/upload-artifact@v3
         with:
           name: cucumber-reports
-          path: target/site/cucumber-reports/
+          path: target/cucumber-reports/
 
       - name: Deploy report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./target/site/cucumber-reports
+          publish_dir: ./target/cucumber-reports
           publish_branch: gh-pages
 
       - name: Show GitHub Pages URL Summary
