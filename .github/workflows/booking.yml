@@ -1,0 +1,44 @@
+name: mobile automation booking CI
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-mobile-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '8'
+          distribution: 'adopt'
+
+      - name: Install dependencies
+        run: mvn install -DskipTests
+
+      - name: Run cucumber tests
+        run: mvn clean verify
+
+      - name: Upload cucumber Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-reports
+          path: target/site/cucumber-reports/
+
+      - name: Deploy report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./target/site/cucumber-reports
+          publish_branch: gh-pages
+
+      - name: Show GitHub Pages URL Summary
+        run: |
+          echo "Your GitHub Pages site is live at: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/overview-features.html"
