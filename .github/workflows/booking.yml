@@ -23,6 +23,9 @@ jobs:
       - name: Install dependencies
         run: mvn install -DskipTests
 
+      - name: Ensure cucumber-reports directory exists
+        run: mkdir -p target/cucumber-reports
+
       - name: Run cucumber tests
         run: mvn clean verify
 

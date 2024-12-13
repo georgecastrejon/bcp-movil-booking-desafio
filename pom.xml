@@ -77,9 +77,10 @@
                         <configuration>
                             <projectName>Reporte de Pruebas</projectName>
                             <outputDirectory>${project.build.directory}/site/cucumber-reports</outputDirectory>
-                            <inputDirectory>${project.build.directory}</inputDirectory>
+                            <inputDirectory>${project.build.directory}/cucumber-reports</inputDirectory>
                             <jsonFiles>
-                                <param>**/*.json</param>
+                                <param>${project.build.directory}/cucumber-reports/cucumber.json</param>
+                                <!--<param>**/*.json</param>-->
                             </jsonFiles>
                         </configuration>
                     </execution>

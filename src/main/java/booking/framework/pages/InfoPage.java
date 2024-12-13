@@ -36,15 +36,18 @@ public class InfoPage extends BaseMobile {
         type(infoRegistro.getApellido(),InfoObject.txtApellido);
         type(infoRegistro.getEmail(),InfoObject.txtEmail);
         scrollTo(InfoObject.ventanaInfo,"up",400);
-        type(infoRegistro.getDireccion(),InfoObject.txtDireccion);
-        type(infoRegistro.getCodigoPostal(),InfoObject.txtPostal);
-        scrollTo(InfoObject.ventanaInfo,"up",400);
-        type(infoRegistro.getCiudad(),InfoObject.txtCiudad);
-        type(infoRegistro.getTelefono(),InfoObject.txtTlf);
 
-        waitClickable(5,InfoObject.btnNextStep);
+        if(waitvisibilityBoolean(3,InfoObject.txtDireccion)){
+            type(infoRegistro.getDireccion(),InfoObject.txtDireccion);
+            type(infoRegistro.getCodigoPostal(),InfoObject.txtPostal);
+            scrollTo(InfoObject.ventanaInfo,"up",400);
+            type(infoRegistro.getCiudad(),InfoObject.txtCiudad);
+        }
+
+        type(infoRegistro.getTelefono(),InfoObject.txtTlf);
+        waitvisibility(5,InfoObject.btnNextStep);
         click(InfoObject.btnNextStep);
-        waitClickable(10,InfoObject.btnFinalStep);
+        waitvisibility(10,InfoObject.btnFinalStep);
         click(InfoObject.btnFinalStep);
     }
 

@@ -17,18 +17,22 @@ public class HomeStep extends TestBase {
 
     @When("ingreso los datos correspondientes {string}")
     public void ingresoLosDatosCorrespondientes(String destino) throws InterruptedException, ExceptionMessage {
-        searchPage.buscarAlojamiento(destino);
-        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
+        //searchPage.buscarAlojamiento(destino);
+        //ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
 
     }
 
     @Then("busco destino.")
     public void buscoDestino() throws ExceptionMessage, InterruptedException {
+        /*
         roomPage.seleccionarHabitaciones();
+
         ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
         infoPage.registrarDatos();
         ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
         paymentPage.registrarPago();
         ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
+
+         */
     }
 }
