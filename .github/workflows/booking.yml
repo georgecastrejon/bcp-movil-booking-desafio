@@ -28,8 +28,10 @@ jobs:
       - name: Install dependencies
         run: mvn install -DskipTests -Dmaven.test.skip=true
 
-      - name: Ensure cucumber-reports directory exists
-        run: mkdir -p target/cucumber-reports
+      - name: Ensure cucumber-reports directory exists before tests
+        run: |
+            mkdir -p target/cucumber-reports
+            echo '{}' > target/cucumber-reports/cucumber.json
 
       - name: Run cucumber tests
         run: mvn clean verify
