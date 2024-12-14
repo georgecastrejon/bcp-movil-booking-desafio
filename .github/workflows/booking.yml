@@ -7,7 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       device:
-        description: "Enter device for testing [GalaxyS9, GooglePixel5, GalaxyA235G]"
+        description: |
+          Enter device for testing
+          [GalaxyS9, GooglePixel5, GalaxyA23 5G]
         required: true
         default: "GalaxyS9"
 
