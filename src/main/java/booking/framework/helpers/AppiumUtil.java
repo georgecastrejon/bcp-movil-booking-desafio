@@ -22,6 +22,8 @@ public class AppiumUtil {
 
     public static void initDevice() {
         if(env.executeSaucelabs()){
+
+
             driver = new AndroidDriver<MobileElement>(Objects.requireNonNull(SampleSauceLabAndroid.LocalUrl()), SampleSauceLabAndroid.desiredCapabilities_S9());
             logger.info("Se inicia las prueba en la nube");
             return;

@@ -12,10 +12,6 @@ on:
           [SGS9, GPixel5, SGA235G]
         required: true
         default: "GalaxyS9"
-        options:
-          - iPhone_14
-          - Samsung_S22
-          - Pixel_7
 
 jobs:
   run-mobile-tests:
@@ -39,7 +35,7 @@ jobs:
           SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}
 
       - name: Run cucumber tests
-        run: mvn clean verify
+        run: mvn clean verify -Ddevice=${{ github.event.inputs.device }}
         env:
           SAUCE_USERNAME: ${{ vars.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}

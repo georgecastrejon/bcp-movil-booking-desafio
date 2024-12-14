@@ -16,8 +16,11 @@ public class Hook extends AppiumUtil {
     @Before
     public void setScenario(Scenario injectedScenario) throws ExceptionMessage {
         try {
-        initDevice();
-        scenario = injectedScenario;
+            String device = System.getProperty("device");
+            System.out.println("########################### Running tests on device: " + device);
+
+            initDevice();
+            scenario = injectedScenario;
         } catch (Exception e) {
             throw new ExceptionMessage(e.getMessage());
         }
