@@ -21,16 +21,17 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-      - name: Check Environment Variables
-        run: |
-          echo "SAUCE_USERNAME=${{ vars.SAUCE_USERNAME }}"
-          echo "SAUCE_ACCESS_KEY=${{ vars.SAUCE_ACCESS_KEY }}"
-
       - name: Install dependencies
         run: mvn install -DskipTests
+        env:
+          SAUCE_USERNAME: ${{ vars.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}
 
       - name: Run cucumber tests
         run: mvn clean verify
+        env:
+          SAUCE_USERNAME: ${{ vars.SAUCE_USERNAME }}
+          SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}
 
       - name: Upload cucumber Reports
         uses: actions/upload-artifact@v3
