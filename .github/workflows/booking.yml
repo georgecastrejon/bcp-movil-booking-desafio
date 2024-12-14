@@ -21,7 +21,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Install dependencies
-        run: mvn install -DskipTests -Dmaven.test.skip=true
+        run: mvn install -DskipTests
 
       - name: Run cucumber tests
         run: mvn clean verify
