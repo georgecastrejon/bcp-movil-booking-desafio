@@ -9,9 +9,9 @@ on:
       device:
         description: |
           Enter device
-          [SGS9, GPixel5, SGA235G]
+          [Samsung Galaxy S9, Samsung Galaxy A23 5G, Google Pixel 5]
         required: true
-        default: "GalaxyS9"
+        default: "Samsung Galaxy S9"
 
 jobs:
   run-mobile-tests:
@@ -35,7 +35,7 @@ jobs:
           SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}
 
       - name: Run cucumber tests
-        run: mvn clean verify -Ddevice=${{ github.event.inputs.device }}
+        run: mvn clean verify -Ddevice="${{ github.event.inputs.device }}"
         env:
           SAUCE_USERNAME: ${{ vars.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}

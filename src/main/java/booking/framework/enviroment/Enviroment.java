@@ -8,4 +8,10 @@ import org.aeonbits.owner.Config;
 public interface Enviroment extends Config{
     @Key("execute.saucelabs")
     boolean executeSaucelabs();
+
+    @Key("local.device.default")
+    String localDeviceDefault();
+
+    @Key("cloud.device.defaul")
+    String cloudDeviceDefaul();
 }
