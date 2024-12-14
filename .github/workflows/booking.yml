@@ -24,7 +24,7 @@ jobs:
         run: mvn install -DskipTests -Dmaven.test.skip=true
 
       - name: Run cucumber tests
-        run: mvn clean verify -X -e
+        run: mvn clean verify
 
       - name: Upload cucumber Reports
         uses: actions/upload-artifact@v3
