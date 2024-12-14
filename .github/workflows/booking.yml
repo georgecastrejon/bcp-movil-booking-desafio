@@ -23,11 +23,10 @@ jobs:
       - name: Install dependencies
         run: mvn install -DskipTests
 
-      - name: Run cucumber tests
-        run: mvn clean verify
-        env:
-            SAUCE_USERNAME: ${{ env.SAUCE_USERNAME }}
-            SAUCE_ACCESS_KEY: ${{ env.SAUCE_ACCESS_KEY }}
+      - name: Show Environment Variables
+        run: |
+          echo "SAUCE_USERNAME=$SAUCE_USERNAME"
+          echo "SAUCE_ACCESS_KEY=$SAUCE_ACCESS_KEY"
 
       - name: Run cucumber tests
         run: mvn clean verify
