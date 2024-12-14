@@ -4,6 +4,7 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 
 //plugin = {"json:target/cucumber.json", "html:target/site/cucumber-pretty"},
+//verifica que maven-cucumber-reporting usen la misma ruta
 
 @CucumberOptions(
         features = {"src/test/resources/features/"},

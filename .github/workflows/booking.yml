@@ -20,24 +20,11 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-      - name: Ensure cucumber-reports directory exists before installation
-        run: |
-          mkdir -p target/cucumber-reports
-          echo '{}' > target/cucumber-reports/cucumber.json
-
       - name: Install dependencies
         run: mvn install -DskipTests -Dmaven.test.skip=true
 
-      - name: Ensure cucumber-reports directory exists before tests
-        run: |
-            mkdir -p target/cucumber-reports
-            echo '{}' > target/cucumber-reports/cucumber.json
-
       - name: Run cucumber tests
         run: mvn clean verify
-
-      - name: Debug cucumber-reports content
-        run: ls -la target/cucumber-reports
 
       - name: Upload cucumber Reports
         uses: actions/upload-artifact@v3
