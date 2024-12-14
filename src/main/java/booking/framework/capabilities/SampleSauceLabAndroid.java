@@ -6,7 +6,10 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.URL;
 
 public class SampleSauceLabAndroid {
-    static String url = "https://"+System.getenv("SAUCE_USERNAME")+":"+System.getenv("SAUCE_ACCESS_KEY") + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
+    static String url = "https://"
+            + System.getenv("SAUCE_USERNAME") + ":"
+            + System.getenv("SAUCE_ACCESS_KEY")
+            + "@ondemand.us-west-1.saucelabs.com:443/wd/hub";
 
     public static final URL LocalUrl() {
         try {
