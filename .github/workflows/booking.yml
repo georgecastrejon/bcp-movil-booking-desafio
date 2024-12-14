@@ -9,6 +9,7 @@ on:
 jobs:
   run-mobile-tests:
     runs-on: ubuntu-latest
+    environment: SaucelabsTest
 
     steps:
       - name: Checkout repository
