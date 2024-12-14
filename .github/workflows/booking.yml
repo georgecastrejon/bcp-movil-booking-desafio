@@ -8,7 +8,7 @@ on:
     inputs:
       device:
         description: |
-          Enter device for testing
+          Enter device
           [GalaxyS9, GooglePixel5, GalaxyA23 5G]
         required: true
         default: "GalaxyS9"
