@@ -12,6 +12,10 @@ on:
           [SGS9, GPixel5, SGA235G]
         required: true
         default: "GalaxyS9"
+        options:
+          - iPhone_14
+          - Samsung_S22
+          - Pixel_7
 
 jobs:
   run-mobile-tests:
