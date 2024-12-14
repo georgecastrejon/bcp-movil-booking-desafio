@@ -61,5 +61,4 @@ public class SampleSauceLabAndroid {
         capabilities.setCapability("autoGrantPermissions",true);
         return capabilities;
     }
-
 }

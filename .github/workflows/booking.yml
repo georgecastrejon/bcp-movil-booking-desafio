@@ -5,7 +5,22 @@ permissions:
 
 on:
   workflow_dispatch:
-
+    inputs:
+      branch:
+        description: "Seleccione la rama para ejecutar"
+        required: true
+        default: "master"
+        options:
+          - develop
+          - master
+      device:
+        description: "Seleccione el modelo de celular para ejecutar las pruebas"
+        required: true
+        default: "Samsung Galaxy S9"
+        options:
+          - Samsung Galaxy A23 5G
+          - Google Pixel 5
+          - Samsung Galaxy S9
 jobs:
   run-mobile-tests:
     runs-on: ubuntu-latest
