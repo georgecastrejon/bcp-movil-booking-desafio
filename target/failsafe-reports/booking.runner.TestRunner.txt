@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: booking.runner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.485 s - in booking.runner.TestRunner
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 84.201 s - in booking.runner.TestRunner

@@ -25,10 +25,9 @@ public class SamplePhysicalAndroid {
     public static final DesiredCapabilities desiredCapabilities_S23() {
         File fichero = new File("src/main/resources/apk/booking-com-32-9.apk");
         String path = fichero.getAbsolutePath().replace("\\", "\\\\");
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Galaxy S23 Ultra");
-        capabilities.setCapability(MobileCapabilityType.UDID, "R5CW606V5WP");
+        capabilities.setCapability(MobileCapabilityType.UDID, System.getenv("UDID_S23"));
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14");
         capabilities.setCapability("appPackage", "com.booking");
