@@ -23,10 +23,11 @@ jobs:
       - name: Install dependencies
         run: mvn install -DskipTests
 
-      - name: Set Sauce Labs credentials as environment variables
-        run: |
-          echo "SAUCE_USERNAME=${{ env.SAUCE_USERNAME }}" >> $GITHUB_ENV
-          echo "SAUCE_ACCESS_KEY=${{ env.SAUCE_ACCESS_KEY }}" >> $GITHUB_ENV
+      - name: Run cucumber tests
+        run: mvn clean verify
+        env:
+            SAUCE_USERNAME: ${{ env.SAUCE_USERNAME }}
+            SAUCE_ACCESS_KEY: ${{ env.SAUCE_ACCESS_KEY }}
 
       - name: Run cucumber tests
         run: mvn clean verify
