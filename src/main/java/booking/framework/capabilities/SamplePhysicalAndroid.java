@@ -35,7 +35,7 @@ public class SamplePhysicalAndroid {
         capabilities.setCapability(MobileCapabilityType.NO_RESET, false);
         capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
         capabilities.setCapability(MobileCapabilityType.APP, path);
-        capabilities.setCapability("autonationName", "UiAutomator2");
+        capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME, "UiAutomator2");
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 60);
         capabilities.setCapability("autoGrantPermissions", true);
         return capabilities;

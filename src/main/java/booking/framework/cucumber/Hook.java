@@ -5,12 +5,9 @@ import booking.framework.helpers.ExceptionMessage;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class Hook extends AppiumUtil {
 
-    private static final Logger logger = LogManager.getLogger(Hook.class);
     private static Scenario scenario;
 
     @Before

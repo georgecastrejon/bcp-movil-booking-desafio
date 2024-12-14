@@ -1,5 +1,3 @@
-# language: en
-
 @smokeTest
 Feature: crear reserva
 

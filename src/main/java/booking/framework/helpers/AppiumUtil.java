@@ -32,8 +32,6 @@ public class AppiumUtil {
                 device = env.cloudDeviceDefaul();
             }
 
-            System.out.println("########################## devices seleccionado" + device);
-
             switch (device) {
                 case "Samsung Galaxy S9":
                     driver = new AndroidDriver<MobileElement>(Objects.requireNonNull(url), SampleSauceLabAndroid.desiredCapabilities_S9());

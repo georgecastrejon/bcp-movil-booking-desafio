@@ -19,7 +19,6 @@ public class HomeStep extends TestBase {
     public void ingresoLosDatosCorrespondientes(String destino) throws InterruptedException, ExceptionMessage {
         /*searchPage.buscarAlojamiento(destino);
         ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
-
          */
     }
 
@@ -31,7 +30,6 @@ public class HomeStep extends TestBase {
         ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
         paymentPage.registrarPago();
         ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
-
          */
     }
 }

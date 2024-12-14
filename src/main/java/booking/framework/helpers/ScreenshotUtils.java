@@ -6,7 +6,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-
 public class ScreenshotUtils {
     private static final Logger logger = LogManager.getLogger(ScreenshotUtils.class);
 

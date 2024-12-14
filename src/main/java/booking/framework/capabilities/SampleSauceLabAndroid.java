@@ -4,6 +4,7 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
+import java.util.HashMap;
 
 public class SampleSauceLabAndroid {
     static String url = "https://"
@@ -29,6 +30,9 @@ public class SampleSauceLabAndroid {
         capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
         capabilities.setCapability(MobileCapabilityType.APP, "storage:filename=booking-com-32-9.apk");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
+        HashMap<String, Object> sauceOptions = new HashMap<String, Object>();
+        sauceOptions.put("appiumVersion", "latest");
+        capabilities.setCapability("sauce:options", sauceOptions);
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,60);
         capabilities.setCapability("autoGrantPermissions",true);
         return capabilities;
@@ -40,9 +44,12 @@ public class SampleSauceLabAndroid {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "13");
         capabilities.setCapability(MobileCapabilityType.NO_RESET, false);
-        capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
+        capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
         capabilities.setCapability(MobileCapabilityType.APP, "storage:filename=booking-com-32-9.apk");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
+        HashMap<String, Object> sauceOptions = new HashMap<String, Object>();
+        sauceOptions.put("appiumVersion", "latest");
+        capabilities.setCapability("sauce:options", sauceOptions);
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,60);
         capabilities.setCapability("autoGrantPermissions",true);
         return capabilities;
@@ -54,9 +61,12 @@ public class SampleSauceLabAndroid {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "14");
         capabilities.setCapability(MobileCapabilityType.NO_RESET, false);
-        capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
+        capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
         capabilities.setCapability(MobileCapabilityType.APP, "storage:filename=booking-com-32-9.apk");
         capabilities.setCapability(MobileCapabilityType.AUTOMATION_NAME,"UiAutomator2");
+        HashMap<String, Object> sauceOptions = new HashMap<String, Object>();
+        sauceOptions.put("appiumVersion", "latest");
+        capabilities.setCapability("sauce:options", sauceOptions);
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT,60);
         capabilities.setCapability("autoGrantPermissions",true);
         return capabilities;

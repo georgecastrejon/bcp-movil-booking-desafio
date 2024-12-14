@@ -5,11 +5,8 @@ import booking.framework.base.BaseMobile;
 import booking.framework.helpers.InfoRegistro;
 import booking.framework.objects.InfoObject;
 import io.appium.java_client.android.AndroidDriver;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class InfoPage extends BaseMobile {
-    private static final Logger logger = LogManager.getLogger(InfoPage.class);
 
     public InfoPage(AndroidDriver driver) {
         super(driver);

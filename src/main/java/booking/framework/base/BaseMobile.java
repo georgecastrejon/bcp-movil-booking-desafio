@@ -7,17 +7,15 @@ import io.appium.java_client.touch.WaitOptions;
 
 import java.time.Duration;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.List;
 
 public class BaseMobile {
     protected AndroidDriver driver;
-    private static final Logger logger = LogManager.getLogger(BaseMobile.class);
 
     public BaseMobile(AndroidDriver driver) {
         this.driver = driver;
@@ -79,11 +77,9 @@ public class BaseMobile {
     }
 
 
-
     public String getText(By locator) {
         return driver.findElement(locator).getText();
     }
-
 
 
     public void type(String inputText, By locator) {
