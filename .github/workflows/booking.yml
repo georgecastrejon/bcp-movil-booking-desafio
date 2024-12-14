@@ -25,8 +25,8 @@ jobs:
 
       - name: Set Sauce Labs credentials as environment variables
         run: |
-          echo "SAUCE_USERNAME=${{ secrets.SAUCE_USERNAME }}" >> $GITHUB_ENV
-          echo "SAUCE_ACCESS_KEY=${{ secrets.SAUCE_ACCESS_KEY }}" >> $GITHUB_ENV
+          echo "SAUCE_USERNAME=${{ env.SAUCE_USERNAME }}" >> $GITHUB_ENV
+          echo "SAUCE_ACCESS_KEY=${{ env.SAUCE_ACCESS_KEY }}" >> $GITHUB_ENV
 
       - name: Run cucumber tests
         run: mvn clean verify
