@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-12-13T23:03:34 PET" name="Surefire suite" finished-at="2024-12-13T23:03:49 PET" duration-ms="14232">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:booking.runner.TestRunner@7880cdf3]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-12-13T23:03:34 PET" name="Surefire test" finished-at="2024-12-13T23:03:49 PET" duration-ms="14232">
+      <class name="booking.runner.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:booking.runner.TestRunner@7880cdf3]" started-at="2024-12-13T23:03:34 PET" name="setUpClass" finished-at="2024-12-13T23:03:35 PET" duration-ms="370" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@19a31b9d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:booking.runner.TestRunner@7880cdf3]" started-at="2024-12-13T23:03:35 PET" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-12-13T23:03:49 PET" duration-ms="13815" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Crear una reserva correcta"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["crear reserva"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:booking.runner.TestRunner@7880cdf3]" started-at="2024-12-13T23:03:49 PET" name="tearDownClass" finished-at="2024-12-13T23:03:49 PET" duration-ms="30" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- booking.runner.TestRunner -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
