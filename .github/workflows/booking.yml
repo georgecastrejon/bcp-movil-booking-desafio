@@ -9,7 +9,7 @@ on:
       device:
         description: |
           Enter device
-          [GalaxyS9, GooglePixel5, GalaxyA23 5G]
+          [SGS9, GPixel5, SGA235G]
         required: true
         default: "GalaxyS9"
 
