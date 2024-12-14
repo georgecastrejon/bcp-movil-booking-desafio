@@ -23,9 +23,8 @@ jobs:
 
       - name: Show Environment Variables
         run: |
-            echo "SAUCE_USERNAME=${{ github.event.environment_variables.SAUCE_USERNAME }}"
-            echo "SAUCE_ACCESS_KEY=${{ github.event.environment_variables.SAUCE_ACCESS_KEY }}"
-      
+          echo "SAUCE_USERNAME=${{ github.event.environment_variables.SAUCE_USERNAME }}"
+          echo "SAUCE_ACCESS_KEY=${{ github.event.environment_variables.SAUCE_ACCESS_KEY }}"
 
       - name: Install dependencies
         run: mvn install -DskipTests
