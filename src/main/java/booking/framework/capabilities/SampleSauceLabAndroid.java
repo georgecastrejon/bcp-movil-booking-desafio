@@ -10,6 +10,7 @@ public class SampleSauceLabAndroid {
 
     public static final URL LocalUrl() {
         try {
+            System.out.println("############################# esta es la url de saucelabs"+url);
             return new URL(url);
         } catch (Exception e) {
             e.getMessage();
