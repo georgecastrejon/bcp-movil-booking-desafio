@@ -1,2 +1,4 @@
-[12-15-2024 00:04:56] INFO  AppiumUtil:45 - Se inicia la prueba en la nube con Samsung Galaxy A23 5G
-[12-15-2024 00:05:02] INFO  SearchPage:33 - No se detecto el intento de logeo con cuenta de google
+[12-15-2024 00:18:38] INFO  AppiumUtil:57 - Se inician las pruebas en local con: Samsung Galaxy S23 Ultra
+[12-15-2024 00:18:51] INFO  SearchPage:50 - Inicio la busquedas de fechas
+[12-15-2024 00:19:24] INFO  ScreenshotUtils:17 - Screenshot capturado y adjuntado con éxito.
+[12-15-2024 00:19:36] INFO  ScreenshotUtils:17 - Screenshot capturado y adjuntado con éxito.
