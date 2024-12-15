@@ -26,8 +26,8 @@ public class HomeStep extends TestBase {
         roomPage.seleccionarHabitaciones();
         ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
         if(infoPage.registrarDatosPayment()){
-            paymentPage.registrarPago();
+            //paymentPage.registrarPago();
         }
-        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
+        //ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
     }
 }

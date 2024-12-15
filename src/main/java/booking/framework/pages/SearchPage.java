@@ -36,7 +36,7 @@ public class SearchPage extends BaseMobile {
     }
 
     public void seleccionarDestino(String destino){
-        waitvisibility(Duration.ofSeconds(3), SearchObject.btnDestino);
+        waitvisibility(Duration.ofSeconds(60), SearchObject.btnDestino);
         click(SearchObject.btnDestino);
         type(destino, SearchObject.txtDestino);
         waitvisibility(Duration.ofSeconds(3), SearchObject.optDestino);

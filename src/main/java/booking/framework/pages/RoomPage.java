@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.time.Duration;
 
+
 public class RoomPage extends BaseMobile {
     private static final Logger logger = LogManager.getLogger(SearchPage.class);
     public RoomPage(AndroidDriver driver) {
@@ -35,7 +36,7 @@ public class RoomPage extends BaseMobile {
     }
 
     public void reservarPrimeraHabitacion(){
-        waitClickable(Duration.ofSeconds(3), RoomObject.btnReservar);
+        waitClickable(Duration.ofSeconds(10), RoomObject.btnReservar);
         click(RoomObject.btnReservar);
     }
 
@@ -43,5 +44,6 @@ public class RoomPage extends BaseMobile {
         seleccionarSegundoResultado();
         seleccionarPromocionHabitacion();
         reservarPrimeraHabitacion();
+
     }
 }

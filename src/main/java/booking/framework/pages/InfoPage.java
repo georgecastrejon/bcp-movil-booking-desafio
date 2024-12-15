@@ -7,6 +7,7 @@ import booking.framework.objects.InfoObject;
 import io.appium.java_client.android.AndroidDriver;
 
 import java.time.Duration;
+import java.util.Set;
 
 public class InfoPage extends BaseMobile {
 
@@ -29,6 +30,9 @@ public class InfoPage extends BaseMobile {
 
     public boolean registrarDatosPayment() throws InterruptedException {
         boolean lpayment=true;
+
+        waitView(Duration.ofSeconds(60),InfoObject.txtNombre);
+
         waitClickable(Duration.ofSeconds(60), InfoObject.txtNombre);
         InfoRegistro infoRegistro = setDatos();
 
@@ -52,6 +56,7 @@ public class InfoPage extends BaseMobile {
             click(InfoObject.btnBookNow);
             return false;
         }
+
         click(InfoObject.btnFinalStep);
         return true;
     }

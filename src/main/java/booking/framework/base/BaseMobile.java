@@ -99,6 +99,12 @@ public class BaseMobile {
         driver.findElement(locator).click();
     }
 
+    public void waitView(Duration timeoutInSeconds, By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+
+    }
+
 
     public void wait(Duration timeoutInSeconds, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
