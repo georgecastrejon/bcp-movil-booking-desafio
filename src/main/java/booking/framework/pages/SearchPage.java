@@ -53,7 +53,7 @@ public class SearchPage extends BaseMobile {
 
     private void selectedEdadNino(int timeoutInSeconds,String optionEdad){
         long startTime = System.currentTimeMillis();
-        while (System.currentTimeMillis() - startTime < timeoutInSeconds * 1000) {
+        while (System.currentTimeMillis() - startTime < (long)timeoutInSeconds * 1000) {
             String edadNinoSelected = getText(SearchObject.selectChildren);
             if(!optionEdad.equals(edadNinoSelected)){
                 scrollTo(SearchObject.panelChildren, "up",200);
@@ -67,7 +67,7 @@ public class SearchPage extends BaseMobile {
        waitvisibility(Duration.ofSeconds(10),SearchObject.quitChildrenNumber);
 
         long startTime = System.currentTimeMillis();
-        while (System.currentTimeMillis() - startTime < timeoutInSeconds * 1000) {
+        while (System.currentTimeMillis() - startTime < (long)timeoutInSeconds * 1000) {
             String defaultchildern = getText(SearchObject.defaultChildrenNumber);
             if(!defaultchildern.equals("0")){
                 click(SearchObject.quitChildrenNumber);
