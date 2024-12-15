@@ -15,5 +15,6 @@ public class InfoObject {
 
     public static final By btnNextStep = By.xpath("//android.widget.Button[contains(@text,'Next step')]");
     public static final By btnFinalStep = By.xpath("//android.widget.Button[contains(@text,'Final step')]");
+    public static final By btnBookNow = By.xpath("//android.widget.Button[@resource-id=\"com.booking:id/action_button\"]");
 
 }

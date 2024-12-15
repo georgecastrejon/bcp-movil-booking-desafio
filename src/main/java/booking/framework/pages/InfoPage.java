@@ -6,6 +6,8 @@ import booking.framework.helpers.InfoRegistro;
 import booking.framework.objects.InfoObject;
 import io.appium.java_client.android.AndroidDriver;
 
+import java.time.Duration;
+
 public class InfoPage extends BaseMobile {
 
     public InfoPage(AndroidDriver driver) {
@@ -25,8 +27,9 @@ public class InfoPage extends BaseMobile {
         return infoRegistro;
     }
 
-    public void registrarDatos() throws InterruptedException {
-        waitClickable(60, InfoObject.txtNombre);
+    public boolean registrarDatosPayment() throws InterruptedException {
+        boolean lpayment=true;
+        waitClickable(Duration.ofSeconds(60), InfoObject.txtNombre);
         InfoRegistro infoRegistro = setDatos();
 
         type(infoRegistro.getNombre(),InfoObject.txtNombre);
@@ -34,7 +37,7 @@ public class InfoPage extends BaseMobile {
         type(infoRegistro.getEmail(),InfoObject.txtEmail);
         scrollTo(InfoObject.ventanaInfo,"up",400);
 
-        if(waitvisibilityBoolean(3,InfoObject.txtDireccion)){
+        if(waitvisibilityBoolean(Duration.ofSeconds(3),InfoObject.txtDireccion)){
             type(infoRegistro.getDireccion(),InfoObject.txtDireccion);
             type(infoRegistro.getCodigoPostal(),InfoObject.txtPostal);
             scrollTo(InfoObject.ventanaInfo,"up",400);
@@ -42,11 +45,14 @@ public class InfoPage extends BaseMobile {
         }
 
         type(infoRegistro.getTelefono(),InfoObject.txtTlf);
-        waitvisibility(5,InfoObject.btnNextStep);
+        waitvisibility(Duration.ofSeconds(5),InfoObject.btnNextStep);
         click(InfoObject.btnNextStep);
-        waitvisibility(10,InfoObject.btnFinalStep);
+
+        if(!waitvisibilityBoolean(Duration.ofSeconds(5),InfoObject.btnFinalStep)){
+            click(InfoObject.btnBookNow);
+            return false;
+        }
         click(InfoObject.btnFinalStep);
+        return true;
     }
-
-
 }

@@ -7,6 +7,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.time.Duration;
+
 public class SearchPage extends BaseMobile {
     private static final Logger logger = LogManager.getLogger(SearchPage.class);
 
@@ -15,17 +17,17 @@ public class SearchPage extends BaseMobile {
     }
 
     public void validateAlerts(){
-        if(isElementVisible(SearchObject.popupCookie,3)){
+        if(isElementVisible(SearchObject.popupCookie, Duration.ofSeconds(3))){
             click(SearchObject.btnAcceptCookie);
         }
 
-        if(isElementVisible(SearchObject.popupcreateAccount,3)){
+        if(isElementVisible(SearchObject.popupcreateAccount,Duration.ofSeconds(3))){
             click(SearchObject.closePopupCreateAccount);
         }
 
         try{
             click(SearchObject.btnCancelSignin);
-            waitvisibility(2,SearchObject.btnCloseSignin);
+            waitvisibility(Duration.ofSeconds(2),SearchObject.btnCloseSignin);
             click(SearchObject.btnCloseSignin);
         }catch (Exception e){
             logger.info("No se detecto el intento de logeo con cuenta de google");
@@ -34,17 +36,18 @@ public class SearchPage extends BaseMobile {
     }
 
     public void seleccionarDestino(String destino){
-        waitvisibility(3, SearchObject.btnDestino);
+        waitvisibility(Duration.ofSeconds(3), SearchObject.btnDestino);
         click(SearchObject.btnDestino);
         type(destino, SearchObject.txtDestino);
-        waitvisibility(3, SearchObject.optDestino);
+        waitvisibility(Duration.ofSeconds(3), SearchObject.optDestino);
         click(SearchObject.optDestino);
     }
 
     public void selecionarFechas(String fechaIni, String fechaFin){
-        if(!waitvisibilityBoolean(3, SearchObject.popupCalendario)){
+        if(!waitvisibilityBoolean(Duration.ofSeconds(3), SearchObject.popupCalendario)){
             click(SearchObject.btnCalendario);
         }
+        logger.info("Inicio la busquedas de fechas");
         selectDateCalendar(SearchObject.popupCalendario, SearchObject.optdiasCalendario, SearchObject.btnSelectDates,fechaIni,fechaFin,120);
     }
 
@@ -61,7 +64,7 @@ public class SearchPage extends BaseMobile {
     }
 
     private void selectedOnlyOneNino(int timeoutInSeconds) throws InterruptedException {
-       waitvisibility(10,SearchObject.quitChildrenNumber);
+       waitvisibility(Duration.ofSeconds(10),SearchObject.quitChildrenNumber);
 
         long startTime = System.currentTimeMillis();
         while (System.currentTimeMillis() - startTime < timeoutInSeconds * 1000) {
@@ -75,15 +78,15 @@ public class SearchPage extends BaseMobile {
     }
 
     public void seleccionarHabitacionPersonas(String optionEdad) throws InterruptedException {
-        waitClickable(3,SearchObject.btnRoomsGuest);
+        waitClickable(Duration.ofSeconds(3),SearchObject.btnRoomsGuest);
         click(SearchObject.btnRoomsGuest);
         selectedOnlyOneNino(20);
-        waitvisibility(3,SearchObject.btnChildren);
+        waitvisibility(Duration.ofSeconds(3),SearchObject.btnChildren);
         click(SearchObject.btnChildren);
-        waitvisibility(3,SearchObject.panelChildren);
+        waitvisibility(Duration.ofSeconds(3),SearchObject.panelChildren);
         selectedEdadNino(20,optionEdad);
         click(SearchObject.btnChildrenOk);
-        waitvisibility(3,SearchObject.resumenChildren);
+        waitvisibility(Duration.ofSeconds(3),SearchObject.resumenChildren);
         click(SearchObject.resumenChildrenApply);
     }
 
@@ -92,7 +95,7 @@ public class SearchPage extends BaseMobile {
       selecionarFechas("14 February 2025","28 February 2025");
       seleccionarHabitacionPersonas("5 years old");
 
-      waitClickable(3,SearchObject.btnSearch);
+      waitClickable(Duration.ofSeconds(3),SearchObject.btnSearch);
       click(SearchObject.btnSearch);
     }
 }

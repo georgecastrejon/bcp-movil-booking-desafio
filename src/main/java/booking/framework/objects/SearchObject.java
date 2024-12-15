@@ -21,7 +21,12 @@ public class SearchObject {
 
     public static final By btnCalendario = By.xpath("//androidx.recyclerview.widget.RecyclerView[2]//android.view.ViewGroup/android.widget.LinearLayout/android.widget.LinearLayout[2]");
 
+
+
     public static final By popupCalendario = By.id("com.booking:id/calendar_month_list");
+
+
+
     public static final By optdiasCalendario = By.xpath("//android.view.View[@content-desc]");
     public static final By btnSelectDates = By.id("com.booking:id/facet_date_picker_confirm");
 

@@ -3,7 +3,6 @@ package booking.framework.helpers;
 import booking.framework.capabilities.SamplePhysicalAndroid;
 import booking.framework.capabilities.SampleSauceLabAndroid;
 import booking.framework.enviroment.Enviroment;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,7 +15,7 @@ public class AppiumUtil {
     static Enviroment env = ConfigFactory.create(Enviroment.class);
     private static final Logger logger = LogManager.getLogger(AppiumUtil.class);
 
-    protected static AndroidDriver<MobileElement> driver;
+    protected static AndroidDriver driver;
 
     protected AppiumUtil() {
     }
@@ -34,15 +33,15 @@ public class AppiumUtil {
 
             switch (device) {
                 case "Samsung Galaxy S9":
-                    driver = new AndroidDriver<MobileElement>(Objects.requireNonNull(url), SampleSauceLabAndroid.desiredCapabilities_S9());
+                    driver = new AndroidDriver(Objects.requireNonNull(url), SampleSauceLabAndroid.desiredCapabilities_S9());
                     logger.info("Se inicia la prueba en la nube con Samsung Galaxy S9");
                     break;
                 case "Google Pixel 5":
-                    driver = new AndroidDriver<MobileElement>(Objects.requireNonNull(url), SampleSauceLabAndroid.desiredCapabilities_PIXEL5());
+                    driver = new AndroidDriver(Objects.requireNonNull(url), SampleSauceLabAndroid.desiredCapabilities_PIXEL5());
                     logger.info("Se inicia la prueba en la nube con Google Pixel 5");
                     break;
                 case "Samsung Galaxy A23 5G":
-                    driver = new AndroidDriver<MobileElement>(Objects.requireNonNull(url), SampleSauceLabAndroid.desiredCapabilities_A235G());
+                    driver = new AndroidDriver(Objects.requireNonNull(url), SampleSauceLabAndroid.desiredCapabilities_A235G());
                     logger.info("Se inicia la prueba en la nube con Samsung Galaxy A23 5G");
                     break;
                 default:
@@ -54,7 +53,7 @@ public class AppiumUtil {
         device = env.localDeviceDefault();
         switch (device) {
             case "Samsung Galaxy S23 Ultra":
-                driver = new AndroidDriver<MobileElement>(Objects.requireNonNull(SamplePhysicalAndroid.LocalUrl()), SamplePhysicalAndroid.desiredCapabilities_S23Ultra());
+                driver = new AndroidDriver(Objects.requireNonNull(SamplePhysicalAndroid.LocalUrl()), SamplePhysicalAndroid.desiredCapabilities_S23Ultra());
                 logger.info("Se inician las pruebas en local con: " + device);
                 break;
             default:

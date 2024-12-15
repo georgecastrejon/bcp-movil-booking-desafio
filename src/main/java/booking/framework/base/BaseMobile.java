@@ -1,15 +1,15 @@
 package booking.framework.base;
 
-import io.appium.java_client.MobileElement;
-import io.appium.java_client.TouchAction;
+
+import org.openqa.selenium.WebElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.touch.WaitOptions;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
 
 import java.time.Duration;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import io.appium.java_client.touch.offset.PointOption;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -26,7 +26,7 @@ public class BaseMobile {
         boolean fechaIniSelected = false;
         boolean fechaFinSelected = false;
 
-        while (System.currentTimeMillis() - startTime < timeoutInSeconds * 1000) {
+        while (System.currentTimeMillis() - startTime < (long) timeoutInSeconds * 1000) {
             List<WebElement> daysElements = driver.findElements(daysSelector);
 
             for (WebElement day : daysElements) {
@@ -61,21 +61,28 @@ public class BaseMobile {
         }
     }
 
-
     public void scrollTo(By locator, String direction, int sizePixel) {
         WebElement element = driver.findElement(locator);
         int startX = element.getLocation().getX() + (element.getSize().getWidth() / 2);
         int startY = element.getLocation().getY() + (element.getSize().getHeight() / 2);
-        int endY = direction.equalsIgnoreCase("down") ? startY + sizePixel : startY - sizePixel;
 
-        new TouchAction(driver)
-                .press(PointOption.point(startX, startY))
-                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(500)))
-                .moveTo(PointOption.point(startX, endY))
-                .release()
-                .perform();
+        int endY;
+        if (direction.equalsIgnoreCase("down")) {
+            endY = startY + sizePixel;
+        } else {
+            endY = startY - sizePixel;
+        }
+
+        PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        Sequence sequence = new Sequence(finger, 0);
+
+        sequence.addAction(finger.createPointerMove(Duration.ofMillis(0), PointerInput.Origin.viewport(), startX, startY));
+        sequence.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        sequence.addAction(finger.createPointerMove(Duration.ofMillis(500), PointerInput.Origin.viewport(), startX, endY));
+        sequence.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+
+        driver.perform(List.of(sequence));
     }
-
 
     public String getText(By locator) {
         return driver.findElement(locator).getText();
@@ -83,7 +90,7 @@ public class BaseMobile {
 
 
     public void type(String inputText, By locator) {
-        MobileElement type = (MobileElement) driver.findElement(locator);
+        WebElement type = driver.findElement(locator);
         type.clear();
         type.sendKeys(inputText);
     }
@@ -92,25 +99,18 @@ public class BaseMobile {
         driver.findElement(locator).click();
     }
 
-    public Boolean idDisplayed(By locator) {
-        try {
-            return driver.findElement(locator).isDisplayed();
-        } catch (org.openqa.selenium.NoSuchElementException e) {
-            return false;
-        }
-    }
 
-    public void wait(long timeoutInSeconds, By locator) {
+    public void wait(Duration timeoutInSeconds, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
-    public void waitvisibility(long timeoutInSeconds, By locator) {
+    public void waitvisibility(Duration timeoutInSeconds, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    public boolean waitvisibilityBoolean(long timeoutInSeconds, By locator) {
+    public boolean waitvisibilityBoolean(Duration timeoutInSeconds, By locator) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
@@ -122,13 +122,13 @@ public class BaseMobile {
         }
     }
 
-    public void waitClickable(long timeoutInSeconds, By locator) {
+    public void waitClickable(Duration timeoutInSeconds, By locator) {
         WebDriverWait wait1 = new WebDriverWait(driver, timeoutInSeconds);
         wait1.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
 
-    public boolean isElementVisible(By locator, int timeInSecond) {
+    public boolean isElementVisible(By locator, Duration timeInSecond) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, timeInSecond);
             wait.until(ExpectedConditions.visibilityOfElementLocated(locator));

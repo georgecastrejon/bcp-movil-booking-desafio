@@ -2,7 +2,6 @@ package booking.framework.cucumber;
 
 import booking.framework.helpers.AppiumUtil;
 import booking.framework.helpers.ExceptionMessage;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.*;
 
@@ -36,7 +35,7 @@ public class Hook extends AppiumUtil {
         }
     }
 
-    public static AndroidDriver<MobileElement> getdriver() {
+    public static AndroidDriver getdriver() {
         return driver;
     }
 }
