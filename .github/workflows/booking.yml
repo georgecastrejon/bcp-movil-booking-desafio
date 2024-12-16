@@ -56,8 +56,9 @@ jobs:
           if git ls-remote --heads https://github.com/${{ github.repository }} gh-pages; then
             git clone --depth=1 --branch=gh-pages https://github.com/${{ github.repository }} gh-pages
             rm -rf gh-pages/*
+            git -C gh-pages add -A
             git -C gh-pages commit -am "Remove old reports"
-            git -C gh-pages push
+            git -C gh-pages push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages
           else
             echo "La rama gh-pages no existe, se omite la limpieza."
           fi
