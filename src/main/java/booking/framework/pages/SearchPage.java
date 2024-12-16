@@ -2,6 +2,9 @@ package booking.framework.pages;
 
 
 import booking.framework.base.BaseMobile;
+import booking.framework.cucumber.Hook;
+import booking.framework.helpers.ExceptionMessage;
+import booking.framework.helpers.ScreenshotUtils;
 import booking.framework.objects.SearchObject;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
@@ -38,7 +41,7 @@ public class SearchPage extends BaseMobile {
         }
     }
 
-    public void seleccionarDestino(String destino) {
+    public void seleccionarDestino(String destino) throws ExceptionMessage {
         waitClickable(Duration.ofSeconds(120), SearchObject.btnDestino);
         logger.info("Se detecta que es clickeable la caja de texto Destino.");
         click(SearchObject.btnDestino);
@@ -47,17 +50,19 @@ public class SearchPage extends BaseMobile {
         logger.info("Se escribe el destino deseado.");
         waitvisibility(Duration.ofSeconds(60), SearchObject.optDestino);
         logger.info("Se espera que existan coincidencias del destino consultado.");
+        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario(),"Destino encontrado");
         click(SearchObject.optDestino);
         logger.info("Se selecciona la primera coincidencia de destino.");
     }
 
-    public void selecionarFechas(String fechaIni, String fechaFin) {
+    public void selecionarFechas(String fechaIni, String fechaFin) throws ExceptionMessage {
         if (!waitvisibilityBoolean(Duration.ofSeconds(5), SearchObject.popupCalendario)) {
             click(SearchObject.btnCalendario);
         }
         logger.info("Se visualiza calendario disponible.");
         selectDateCalendar(SearchObject.popupCalendario, SearchObject.optdiasCalendario, SearchObject.btnSelectDates, fechaIni, fechaFin, 120);
         logger.info("Se selecciona el rango de fechas deseado.");
+        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario(),"Fechas seleccionadas");
     }
 
     private void selectedEdadNino(int timeoutInSeconds, String edadNino) throws Exception {
@@ -112,15 +117,18 @@ public class SearchPage extends BaseMobile {
         logger.info("Se realiza click en agregar niño deseado.");
         waitvisibility(Duration.ofSeconds(60), SearchObject.resumenChildren);
         logger.info("Se espera que este visible el panel de selección de personas.");
+        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario(),"Selección de niño");
         click(SearchObject.resumenChildrenApply);
         logger.info("Se da click en aplicar cantidad de personas.");
+        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario(),"Selección de personas");
     }
 
-    public void clickSearch() {
+    public void clickSearch() throws ExceptionMessage {
         waitClickable(Duration.ofSeconds(3), SearchObject.btnSearch);
         logger.info("Se espera que sea clickeable el botón 'Buscar'.");
         click(SearchObject.btnSearch);
         logger.info("Se da click en el botón 'Buscar'.");
+        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario(),"Resultado de búsqueda");
     }
 
     public void buscarAlojamiento(Map<String, String> datosReserva) throws Exception {

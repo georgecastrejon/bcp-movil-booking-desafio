@@ -1,84 +1,100 @@
-[12-15-2024 20:38:53] INFO  AppiumUtil:57 - Se inician las pruebas en local con: Samsung Galaxy S23 Ultra
-[12-15-2024 20:38:57] INFO  SearchPage:28 - Se detecta alerta de crear una cuenta y se cierra. 
-[12-15-2024 20:39:00] INFO  SearchPage:35 - Se deecta popup de intento de logeo y se cierra.
-[12-15-2024 20:39:01] INFO  SearchPage:43 - Se detecta que es clickeable la caja de texto Destino.
-[12-15-2024 20:39:03] INFO  SearchPage:45 - Se da click en la caja de texto Destino.
-[12-15-2024 20:39:04] INFO  SearchPage:47 - Se escribe el destino deseado.
-[12-15-2024 20:39:06] INFO  SearchPage:49 - Se espera que existan coincidencias del destino consultado.
-[12-15-2024 20:39:06] INFO  SearchPage:51 - Se selecciona la primera coincidencia de destino.
-[12-15-2024 20:39:08] INFO  SearchPage:58 - Se visualiza calendario disponible.
-[12-15-2024 20:39:17] INFO  SearchPage:60 - Se selecciona el rango de fechas deseado.
-[12-15-2024 20:39:18] INFO  SearchPage:98 - Se espera que la caja de texto para seleccionar personas este disponible.
-[12-15-2024 20:39:19] INFO  SearchPage:100 - Se da click en la caja de texto para seleccionar personas.
-[12-15-2024 20:39:19] INFO  SearchPage:80 - Se espera que sea visible el botón elminar niño.
-[12-15-2024 20:39:19] INFO  SearchPage:89 - La cantidad de niños es igual a cero.
-[12-15-2024 20:39:19] INFO  SearchPage:102 - Se finaliza la validación de niño igual a 0.
-[12-15-2024 20:39:19] INFO  SearchPage:104 - Se espera que el botón de agregar niños este visible
-[12-15-2024 20:39:20] INFO  SearchPage:106 - Se da click en el botón de agregar niños.
-[12-15-2024 20:39:21] INFO  SearchPage:108 - Se espera que el panel de agregar niño sea clickeable.
-[12-15-2024 20:39:21] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:23] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:25] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:27] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:29] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:31] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:32] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:34] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:37] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:39] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:40] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:42] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:44] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:46] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:48] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:50] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:52] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:39:58] INFO  AppiumUtil:57 - Se inician las pruebas en local con: Samsung Galaxy S23 Ultra
-[12-15-2024 20:40:02] INFO  SearchPage:28 - Se detecta alerta de crear una cuenta y se cierra. 
-[12-15-2024 20:40:05] INFO  SearchPage:35 - Se deecta popup de intento de logeo y se cierra.
-[12-15-2024 20:40:05] INFO  SearchPage:43 - Se detecta que es clickeable la caja de texto Destino.
-[12-15-2024 20:40:07] INFO  SearchPage:45 - Se da click en la caja de texto Destino.
-[12-15-2024 20:40:08] INFO  SearchPage:47 - Se escribe el destino deseado.
-[12-15-2024 20:40:10] INFO  SearchPage:49 - Se espera que existan coincidencias del destino consultado.
-[12-15-2024 20:40:10] INFO  SearchPage:51 - Se selecciona la primera coincidencia de destino.
-[12-15-2024 20:40:11] INFO  SearchPage:58 - Se visualiza calendario disponible.
-[12-15-2024 20:40:21] INFO  SearchPage:60 - Se selecciona el rango de fechas deseado.
-[12-15-2024 20:40:22] INFO  SearchPage:98 - Se espera que la caja de texto para seleccionar personas este disponible.
-[12-15-2024 20:40:23] INFO  SearchPage:100 - Se da click en la caja de texto para seleccionar personas.
-[12-15-2024 20:40:23] INFO  SearchPage:80 - Se espera que sea visible el botón elminar niño.
-[12-15-2024 20:40:23] INFO  SearchPage:89 - La cantidad de niños es igual a cero.
-[12-15-2024 20:40:23] INFO  SearchPage:102 - Se finaliza la validación de niño igual a 0.
-[12-15-2024 20:40:23] INFO  SearchPage:104 - Se espera que el botón de agregar niños este visible
-[12-15-2024 20:40:23] INFO  SearchPage:106 - Se da click en el botón de agregar niños.
-[12-15-2024 20:40:24] INFO  SearchPage:108 - Se espera que el panel de agregar niño sea clickeable.
-[12-15-2024 20:40:25] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:40:27] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:40:29] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:40:31] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:40:33] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:40:34] INFO  SearchPage:69 - Se realiza scroll para buscar la cantidad de niño deseada.
-[12-15-2024 20:40:36] INFO  SearchPage:71 - Se detecto la cantidad de niño deseado: 5 years old
-[12-15-2024 20:40:36] INFO  SearchPage:110 - Se finaliza la búsqueda de niño deseado.
-[12-15-2024 20:40:37] INFO  SearchPage:112 - Se realiza click en agregar niño deseado.
-[12-15-2024 20:40:37] INFO  SearchPage:114 - Se espera que este visible el panel de selección de personas.
-[12-15-2024 20:40:37] INFO  SearchPage:116 - Se da click en aplicar cantidad de personas.
-[12-15-2024 20:40:37] INFO  SearchPage:121 - Se espera que sea clickeable el botón 'Buscar'.
-[12-15-2024 20:40:39] INFO  SearchPage:123 - Se da click en el botón 'Buscar'.
-[12-15-2024 20:40:40] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
-[12-15-2024 20:40:40] INFO  ReservaStep:31 - Se realiza screenShot al resultado de búsqueda.
-[12-15-2024 20:40:40] INFO  SearchPage:20 - Se espera que sea visibleel botón 'Sort'.
-[12-15-2024 20:40:40] INFO  SearchPage:22 - Se da click al segundo resultado de la búsqueda.
-[12-15-2024 20:40:42] INFO  SearchPage:27 - Se espera que sea visible el botón 'See your options.
-[12-15-2024 20:40:42] INFO  SearchPage:29 - Se da click en el botón 'See your options'.
-[12-15-2024 20:40:49] INFO  SearchPage:39 - Se da click a la primera opción de habitación disponible.
-[12-15-2024 20:40:49] INFO  SearchPage:44 - Se espera que sea clickeable el botón de 'Reservar'.
-[12-15-2024 20:40:51] INFO  SearchPage:46 - Se da click en el botón de 'Reservar'.
-[12-15-2024 20:40:51] INFO  InfoPage:34 - Se espera que sea clickeable la caja de texto 'First Name'.
-[12-15-2024 20:40:52] INFO  InfoPage:45 - Se ingresa Nombre.
-[12-15-2024 20:40:53] INFO  InfoPage:47 - Se ingresa Apellido.
-[12-15-2024 20:40:54] INFO  InfoPage:49 - Se ingresa Email.
-[12-15-2024 20:40:55] INFO  InfoPage:51 - Se realiza scroll.
-[12-15-2024 20:41:02] INFO  InfoPage:65 - Se ingresa teléfono.
-[12-15-2024 20:41:02] INFO  InfoPage:67 - Se espera que sea visible el botón 'Next step'.
-[12-15-2024 20:41:03] INFO  InfoPage:69 - Se da click al botón 'Next step'.
-[12-15-2024 20:41:13] INFO  InfoPage:23 - Se da click al botón 'Book now'.
+[12-16-2024 00:44:14] INFO  AppiumUtil:57 - Se inician las pruebas en local con: Samsung Galaxy S23 Ultra
+[12-16-2024 00:44:20] INFO  SearchPage:31 - Se detecta alerta de crear una cuenta y se cierra. 
+[12-16-2024 00:44:21] INFO  SearchPage:38 - Se deecta popup de intento de logeo y se cierra.
+[12-16-2024 00:44:22] INFO  SearchPage:46 - Se detecta que es clickeable la caja de texto Destino.
+[12-16-2024 00:44:23] INFO  SearchPage:48 - Se da click en la caja de texto Destino.
+[12-16-2024 00:44:24] INFO  SearchPage:50 - Se escribe el destino deseado.
+[12-16-2024 00:44:26] INFO  SearchPage:52 - Se espera que existan coincidencias del destino consultado.
+[12-16-2024 00:44:26] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:44:26] INFO  SearchPage:55 - Se selecciona la primera coincidencia de destino.
+[12-16-2024 00:44:28] INFO  SearchPage:62 - Se visualiza calendario disponible.
+[12-16-2024 00:44:37] INFO  SearchPage:64 - Se selecciona el rango de fechas deseado.
+[12-16-2024 00:44:38] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:44:38] INFO  SearchPage:103 - Se espera que la caja de texto para seleccionar personas este disponible.
+[12-16-2024 00:44:39] INFO  SearchPage:105 - Se da click en la caja de texto para seleccionar personas.
+[12-16-2024 00:44:39] INFO  SearchPage:85 - Se espera que sea visible el botón elminar niño.
+[12-16-2024 00:44:39] INFO  SearchPage:94 - La cantidad de niños es igual a cero.
+[12-16-2024 00:44:39] INFO  SearchPage:107 - Se finaliza la validación de niño igual a 0.
+[12-16-2024 00:44:39] INFO  SearchPage:109 - Se espera que el botón de agregar niños este visible
+[12-16-2024 00:44:39] INFO  SearchPage:111 - Se da click en el botón de agregar niños.
+[12-16-2024 00:44:40] INFO  SearchPage:113 - Se espera que el panel de agregar niño sea clickeable.
+[12-16-2024 00:44:41] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:44:43] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:44:45] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:44:47] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:44:49] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:44:51] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:44:52] INFO  SearchPage:76 - Se detecto la cantidad de niño deseado: 5 years old
+[12-16-2024 00:44:52] INFO  SearchPage:115 - Se finaliza la búsqueda de niño deseado.
+[12-16-2024 00:44:52] INFO  SearchPage:117 - Se realiza click en agregar niño deseado.
+[12-16-2024 00:44:53] INFO  SearchPage:119 - Se espera que este visible el panel de selección de personas.
+[12-16-2024 00:44:53] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:44:53] INFO  SearchPage:122 - Se da click en aplicar cantidad de personas.
+[12-16-2024 00:44:54] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:44:54] INFO  SearchPage:128 - Se espera que sea clickeable el botón 'Buscar'.
+[12-16-2024 00:44:54] INFO  SearchPage:130 - Se da click en el botón 'Buscar'.
+[12-16-2024 00:44:54] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:44:57] INFO  RoomPage:25 - Se espera que sea visibleel botón 'Sort'.
+[12-16-2024 00:44:59] INFO  RoomPage:27 - Se da click al segundo resultado de la búsqueda.
+[12-16-2024 00:44:59] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:45:03] INFO  RoomPage:33 - Se espera que sea visible el botón 'See your options.
+[12-16-2024 00:45:03] INFO  RoomPage:35 - Se da click en el botón 'See your options'.
+[12-16-2024 00:45:04] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:45:12] INFO  RoomPage:49 - Se da click a la primera opción de habitación disponible.
+[12-16-2024 00:45:12] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:45:13] INFO  RoomPage:55 - Se espera que sea clickeable el botón de 'Reservar'.
+[12-16-2024 00:45:15] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:45:15] INFO  RoomPage:58 - Se da click en el botón de 'Reservar'.
+[12-16-2024 00:45:15] INFO  InfoPage:34 - Se espera que sea clickeable la caja de texto 'First Name'.
+[12-16-2024 00:45:16] INFO  InfoPage:45 - Se ingresa Nombre.
+[12-16-2024 00:45:17] INFO  InfoPage:47 - Se ingresa Apellido.
+[12-16-2024 00:45:18] INFO  InfoPage:49 - Se ingresa Email.
+[12-16-2024 00:45:19] INFO  InfoPage:51 - Se realiza scroll.
+[12-16-2024 00:45:22] INFO  InfoPage:55 - Se ingresa Dirección.
+[12-16-2024 00:45:23] INFO  InfoPage:57 - Se ingresa Código postal.
+[12-16-2024 00:45:24] INFO  InfoPage:59 - Se realiza scroll.
+[12-16-2024 00:45:25] INFO  InfoPage:61 - Se ingresa ciudad.
+[12-16-2024 00:45:26] INFO  InfoPage:65 - Se ingresa teléfono.
+[12-16-2024 00:45:27] INFO  InfoPage:67 - Se espera que sea visible el botón 'Next step'.
+[12-16-2024 00:45:27] INFO  InfoPage:69 - Se da click al botón 'Next step'.
+[12-16-2024 00:45:29] INFO  InfoPage:27 - Se da click al botón 'Final Step'.
+[12-16-2024 00:45:32] INFO  PaymentPage:20 - Se espera que sea visible la caja de texto 'Numero de tarjeta'.
+[12-16-2024 00:45:33] INFO  PaymentPage:23 - Se ingresa número de tarjeta.
+[12-16-2024 00:45:35] INFO  PaymentPage:25 - Se ingresa Fecha de expiración.
+[12-16-2024 00:45:41] INFO  AppiumUtil:57 - Se inician las pruebas en local con: Samsung Galaxy S23 Ultra
+[12-16-2024 00:45:46] INFO  SearchPage:31 - Se detecta alerta de crear una cuenta y se cierra. 
+[12-16-2024 00:45:48] INFO  SearchPage:38 - Se deecta popup de intento de logeo y se cierra.
+[12-16-2024 00:45:48] INFO  SearchPage:46 - Se detecta que es clickeable la caja de texto Destino.
+[12-16-2024 00:45:49] INFO  SearchPage:48 - Se da click en la caja de texto Destino.
+[12-16-2024 00:45:51] INFO  SearchPage:50 - Se escribe el destino deseado.
+[12-16-2024 00:45:52] INFO  SearchPage:52 - Se espera que existan coincidencias del destino consultado.
+[12-16-2024 00:45:53] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:45:54] INFO  SearchPage:55 - Se selecciona la primera coincidencia de destino.
+[12-16-2024 00:45:54] INFO  SearchPage:62 - Se visualiza calendario disponible.
+[12-16-2024 00:46:05] INFO  SearchPage:64 - Se selecciona el rango de fechas deseado.
+[12-16-2024 00:46:06] INFO  ScreenshotUtils:18 - Screenshot capturado y adjuntado con éxito.
+[12-16-2024 00:46:06] INFO  SearchPage:103 - Se espera que la caja de texto para seleccionar personas este disponible.
+[12-16-2024 00:46:06] INFO  SearchPage:105 - Se da click en la caja de texto para seleccionar personas.
+[12-16-2024 00:46:07] INFO  SearchPage:85 - Se espera que sea visible el botón elminar niño.
+[12-16-2024 00:46:07] INFO  SearchPage:94 - La cantidad de niños es igual a cero.
+[12-16-2024 00:46:07] INFO  SearchPage:107 - Se finaliza la validación de niño igual a 0.
+[12-16-2024 00:46:07] INFO  SearchPage:109 - Se espera que el botón de agregar niños este visible
+[12-16-2024 00:46:07] INFO  SearchPage:111 - Se da click en el botón de agregar niños.
+[12-16-2024 00:46:08] INFO  SearchPage:113 - Se espera que el panel de agregar niño sea clickeable.
+[12-16-2024 00:46:09] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:11] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:13] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:15] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:17] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:18] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:20] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:22] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:24] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:26] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:28] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:30] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:32] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:34] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:35] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:37] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
+[12-16-2024 00:46:39] INFO  SearchPage:74 - Se realiza scroll para buscar la cantidad de niño deseada.
