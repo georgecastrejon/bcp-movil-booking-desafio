@@ -23,7 +23,6 @@ public class Hook extends AppiumUtil {
         return scenario;
     }
 
-
     @After
     public static void after() throws ExceptionMessage {
         try {

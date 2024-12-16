@@ -1,6 +1,5 @@
 package booking.framework.base;
 
-
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.interactions.PointerInput;
@@ -88,7 +87,6 @@ public class BaseMobile {
         return driver.findElement(locator).getText();
     }
 
-
     public void type(String inputText, By locator) {
         WebElement type = driver.findElement(locator);
         type.clear();
@@ -99,14 +97,7 @@ public class BaseMobile {
         driver.findElement(locator).click();
     }
 
-    public void waitView(Duration timeoutInSeconds, By locator) {
-        WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-
-    }
-
-
-    public void wait(Duration timeoutInSeconds, By locator) {
+    public void waitElementLocated(Duration timeoutInSeconds, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
@@ -132,7 +123,6 @@ public class BaseMobile {
         WebDriverWait wait1 = new WebDriverWait(driver, timeoutInSeconds);
         wait1.until(ExpectedConditions.elementToBeClickable(locator));
     }
-
 
     public boolean isElementVisible(By locator, Duration timeInSecond) {
         try {

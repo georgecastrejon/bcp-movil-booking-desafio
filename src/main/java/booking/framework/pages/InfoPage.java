@@ -2,62 +2,70 @@ package booking.framework.pages;
 
 import booking.framework.base.BaseMobile;
 
-import booking.framework.helpers.InfoRegistro;
 import booking.framework.objects.InfoObject;
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.time.Duration;
-import java.util.Set;
+import java.util.Map;
 
 public class InfoPage extends BaseMobile {
+    private static final Logger logger = LogManager.getLogger(InfoPage.class);
 
     public InfoPage(AndroidDriver driver) {
         super(driver);
     }
 
-    public InfoRegistro setDatos() {
-        InfoRegistro infoRegistro = new InfoRegistro();
-        infoRegistro.setNombre("George");
-        infoRegistro.setApellido("Castrejon");
-        infoRegistro.setEmail("sandovalcastrejon@gmail.com");
-        infoRegistro.setPais("Peru");
-        infoRegistro.setDireccion("calle las begonias");
-        infoRegistro.setCodigoPostal("1234");
-        infoRegistro.setCiudad("lima");
-        infoRegistro.setTelefono("99999999");
-        return infoRegistro;
+    public boolean reservarConPago() {
+        if (!waitvisibilityBoolean(Duration.ofSeconds(10), InfoObject.btnFinalStep)) {
+            click(InfoObject.btnBookNow);
+            logger.info("Se da click al botón 'Book now'.");
+            return false;
+        } else {
+            click(InfoObject.btnFinalStep);
+            logger.info("Se da click al botón 'Final Step'.");
+            return true;
+        }
     }
 
-    public boolean registrarDatosPayment() throws InterruptedException {
-        boolean lpayment=true;
-
-        waitView(Duration.ofSeconds(60),InfoObject.txtNombre);
-
+    public void registrarDatos(Map<String, String> datosReserva) {
         waitClickable(Duration.ofSeconds(60), InfoObject.txtNombre);
-        InfoRegistro infoRegistro = setDatos();
+        logger.info("Se espera que sea clickeable la caja de texto 'First Name'.");
 
-        type(infoRegistro.getNombre(),InfoObject.txtNombre);
-        type(infoRegistro.getApellido(),InfoObject.txtApellido);
-        type(infoRegistro.getEmail(),InfoObject.txtEmail);
-        scrollTo(InfoObject.ventanaInfo,"up",400);
+        String nombre = datosReserva.get("nombre");
+        String apellido = datosReserva.get("apellido");
+        String email = datosReserva.get("email");
+        String direccion = datosReserva.get("direccion");
+        String codpostal = datosReserva.get("codigoPostal");
+        String ciudad = datosReserva.get("ciudad");
+        String telefono = datosReserva.get("telefono");
 
-        if(waitvisibilityBoolean(Duration.ofSeconds(3),InfoObject.txtDireccion)){
-            type(infoRegistro.getDireccion(),InfoObject.txtDireccion);
-            type(infoRegistro.getCodigoPostal(),InfoObject.txtPostal);
-            scrollTo(InfoObject.ventanaInfo,"up",400);
-            type(infoRegistro.getCiudad(),InfoObject.txtCiudad);
+        type(nombre, InfoObject.txtNombre);
+        logger.info("Se ingresa Nombre.");
+        type(apellido, InfoObject.txtApellido);
+        logger.info("Se ingresa Apellido.");
+        type(email, InfoObject.txtEmail);
+        logger.info("Se ingresa Email.");
+        scrollTo(InfoObject.ventanaInfo, "up", 400);
+        logger.info("Se realiza scroll.");
+
+        if (waitvisibilityBoolean(Duration.ofSeconds(5), InfoObject.txtDireccion)) {
+            type(direccion, InfoObject.txtDireccion);
+            logger.info("Se ingresa Dirección.");
+            type(codpostal, InfoObject.txtPostal);
+            logger.info("Se ingresa Código postal.");
+            scrollTo(InfoObject.ventanaInfo, "up", 400);
+            logger.info("Se realiza scroll.");
+            type(ciudad, InfoObject.txtCiudad);
+            logger.info("Se ingresa ciudad.");
         }
 
-        type(infoRegistro.getTelefono(),InfoObject.txtTlf);
-        waitvisibility(Duration.ofSeconds(5),InfoObject.btnNextStep);
+        type(telefono, InfoObject.txtTlf);
+        logger.info("Se ingresa teléfono.");
+        waitvisibility(Duration.ofSeconds(10), InfoObject.btnNextStep);
+        logger.info("Se espera que sea visible el botón 'Next step'.");
         click(InfoObject.btnNextStep);
-
-        if(!waitvisibilityBoolean(Duration.ofSeconds(5),InfoObject.btnFinalStep)){
-            click(InfoObject.btnBookNow);
-            return false;
-        }
-
-        click(InfoObject.btnFinalStep);
-        return true;
+        logger.info("Se da click al botón 'Next step'.");
     }
 }

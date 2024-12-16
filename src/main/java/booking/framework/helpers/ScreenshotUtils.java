@@ -1,4 +1,5 @@
 package booking.framework.helpers;
+
 import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
