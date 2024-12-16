@@ -38,7 +38,7 @@ public class RoomPage extends BaseMobile {
 
     private void seleccionarPrimeraHabitacion() throws ExceptionMessage {
         waitElementLocated(Duration.ofSeconds(8), RoomObject.panelResultadosHab);
-        scrollTo(RoomObject.panelResultadosHab, "up", 200);
+        scrollTo(RoomObject.panelResultadosHab, "up", 400);
 
         if (waitvisibilityBoolean(Duration.ofSeconds(5), RoomObject.selectRoomFirst)) {
             click(RoomObject.selectRoomFirst);
