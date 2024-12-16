@@ -10,11 +10,11 @@ import org.openqa.selenium.WebDriver;
 public class ScreenshotUtils {
     private static final Logger logger = LogManager.getLogger(ScreenshotUtils.class);
 
-    public static void attachScreenshotToScenario(WebDriver driver, Scenario scenario) throws ExceptionMessage {
+    public static void attachScreenshotToScenario(WebDriver driver, Scenario scenario, String nameImage) throws ExceptionMessage {
         try {
             if (driver instanceof TakesScreenshot) {
                 byte[] screenshotBytes = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                scenario.attach(screenshotBytes, "image/png", "Screenshot");
+                scenario.attach(screenshotBytes, "image/png", nameImage);
                 logger.info("Screenshot capturado y adjuntado con éxito.");
             } else {
                 logger.info("El driver no es compatible con capturas de pantalla.");

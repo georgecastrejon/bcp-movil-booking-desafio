@@ -88,5 +88,6 @@ Para ejecutar el flujo de trabajo desde GitHub Actions y generar el reporte, sig
     - Dentro del job `run-mobile-tests`, ubica el stage **Show GitHub Pages URL**.
     - Este paso mostrará la URL de GitHub Pages en la salida de la ejecución.
     - La URL redirigirá a la página del reporte generado, que se puede visualizar directamente en el navegador.
+    - Se debe esperar 5 minutos para que la nueva versión del reporte sea publicada y lo pueda visualziar correctamente.
 
 ---

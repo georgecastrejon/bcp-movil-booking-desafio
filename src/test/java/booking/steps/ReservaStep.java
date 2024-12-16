@@ -23,24 +23,20 @@ public class ReservaStep extends TestBase {
 
     @When("ingreso los datos correspondientes")
     public void ingresoLosDatosCorrespondientes(DataTable dataTable) throws Exception {
-        /*
         Map<String, String> datosReserva = dataTable.asMap(String.class, String.class);
 
         searchPage.buscarAlojamiento(datosReserva);
-        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario());
+        ScreenshotUtils.attachScreenshotToScenario(driver, Hook.getScenario(),"Resultado de búsqueda");
         logger.info("Se realiza screenShot al resultado de búsqueda.");
 
         roomPage.seleccionarHabitaciones();
         infoPage.registrarDatos(datosReserva);
-
-         */
     }
 
     @Then("realizo la reserva.")
     public void realizolareserva(){
-        /*if(infoPage.reservarConPago()){
+        if(infoPage.reservarConPago()){
             paymentPage.registrarPago();
         }
-         */
     }
 }
