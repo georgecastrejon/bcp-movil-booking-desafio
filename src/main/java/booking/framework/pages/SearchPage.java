@@ -46,6 +46,7 @@ public class SearchPage extends BaseMobile {
         logger.info("Se detecta que es clickeable la caja de texto Destino.");
         click(SearchObject.btnDestino);
         logger.info("Se da click en la caja de texto Destino.");
+        waitClickable(Duration.ofSeconds(60),SearchObject.txtDestino);
         type(destino, SearchObject.txtDestino);
         logger.info("Se escribe el destino deseado.");
         waitvisibility(Duration.ofSeconds(60), SearchObject.optDestino);
