@@ -2,6 +2,9 @@ package booking.framework.pages;
 
 import booking.framework.base.BaseMobile;
 
+import booking.framework.cucumber.Hook;
+import booking.framework.helpers.ExceptionMessage;
+import booking.framework.helpers.ScreenshotUtils;
 import booking.framework.objects.InfoObject;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
@@ -29,7 +32,7 @@ public class InfoPage extends BaseMobile {
         }
     }
 
-    public void registrarDatos(Map<String, String> datosReserva) {
+    public void registrarDatos(Map<String, String> datosReserva) throws ExceptionMessage {
         waitClickable(Duration.ofSeconds(60), InfoObject.txtNombre);
         logger.info("Se espera que sea clickeable la caja de texto 'First Name'.");
 
@@ -50,7 +53,7 @@ public class InfoPage extends BaseMobile {
         scrollTo(InfoObject.ventanaInfo, "up", 400);
         logger.info("Se realiza scroll.");
 
-        if (waitvisibilityBoolean(Duration.ofSeconds(5), InfoObject.txtDireccion)) {
+        if (waitvisibilityBoolean(Duration.ofSeconds(3), InfoObject.txtDireccion)) {
             type(direccion, InfoObject.txtDireccion);
             logger.info("Se ingresa Dirección.");
             type(codpostal, InfoObject.txtPostal);
@@ -63,6 +66,8 @@ public class InfoPage extends BaseMobile {
 
         type(telefono, InfoObject.txtTlf);
         logger.info("Se ingresa teléfono.");
+
+        //Para capturar pantalla con datos sensibles es necesario modificar el FLAG_SECURE del apk a false
         waitvisibility(Duration.ofSeconds(10), InfoObject.btnNextStep);
         logger.info("Se espera que sea visible el botón 'Next step'.");
         click(InfoObject.btnNextStep);

@@ -26,7 +26,7 @@ Asegúrate de cumplir con los siguientes requisitos para garantizar la correcta 
 - **Maven (última versión estable)**  
   Utilizado para la gestión de dependencias y la ejecución de las pruebas.
 
-### **2. Configuración de Variables de Entorno**
+### **2. Configuraciones**
 
 #### **2.1 Configuración Local**
 Para ejecutar pruebas en dispositivos físicos:
@@ -35,6 +35,7 @@ Para ejecutar pruebas en dispositivos físicos:
    - Samsung Galaxy S23 Ultra
    - Samsung Galaxy S9 Plus
    - Poco X5 5G
+3. El idioma del dispositivo debe estar en ingles
 
 #### **2.2 Configuración en GitHub Actions**
 1. Configura un entorno llamado `SaucelabsTest`.
