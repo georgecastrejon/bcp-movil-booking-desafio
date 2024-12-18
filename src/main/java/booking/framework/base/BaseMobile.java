@@ -60,6 +60,38 @@ public class BaseMobile {
         }
     }
 
+    public boolean waitBooleanvisibilityOf(Duration timeoutInSeconds, WebElement locator) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+            wait.until(ExpectedConditions.visibilityOf(locator));
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public void clickItemElements(By locatorElements,int nroElementClick, By locatorScroll,int maxWaitTimeSeconds){
+        long startTime = System.currentTimeMillis();
+
+        while(System.currentTimeMillis() - startTime < maxWaitTimeSeconds * 1000){
+            List<WebElement> elements = driver.findElements(locatorElements);
+            int nroElement = nroElementClick-1;
+
+            if(elements.size()>=nroElement){
+                WebElement targetElement  = elements.get(nroElement);
+
+                boolean isVisible = waitBooleanvisibilityOf(Duration.ofSeconds(10),targetElement);
+                if (isVisible) {
+                    targetElement.click();
+                    break;
+                }
+            }
+            scrollTo(locatorScroll, "up", 200);
+        }
+    }
+
     public void scrollTo(By locator, String direction, int sizePixel) {
         WebElement element = driver.findElement(locator);
         int startX = element.getLocation().getX() + (element.getSize().getWidth() / 2);
@@ -89,7 +121,6 @@ public class BaseMobile {
 
     public void type(String inputText, By locator) {
         WebElement type = driver.findElement(locator);
-        type.clear();
         type.sendKeys(inputText);
     }
 
@@ -104,6 +135,11 @@ public class BaseMobile {
 
     public void waitvisibility(Duration timeoutInSeconds, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, timeoutInSeconds);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+    public void waitvisibilityMillis(Duration timeoutInMillis, By locator) {
+        WebDriverWait wait = new WebDriverWait(driver, timeoutInMillis);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 

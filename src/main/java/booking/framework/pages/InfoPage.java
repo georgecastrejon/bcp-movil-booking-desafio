@@ -4,7 +4,6 @@ import booking.framework.base.BaseMobile;
 
 import booking.framework.cucumber.Hook;
 import booking.framework.helpers.ExceptionMessage;
-import booking.framework.helpers.ScreenshotUtils;
 import booking.framework.objects.InfoObject;
 import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
@@ -22,12 +21,16 @@ public class InfoPage extends BaseMobile {
 
     public boolean reservarConPago() {
         if (!waitvisibilityBoolean(Duration.ofSeconds(10), InfoObject.btnFinalStep)) {
+
             click(InfoObject.btnBookNow);
             logger.info("Se da click al botón 'Book now'.");
+
             return false;
         } else {
+
             click(InfoObject.btnFinalStep);
             logger.info("Se da click al botón 'Final Step'.");
+
             return true;
         }
     }
@@ -46,23 +49,32 @@ public class InfoPage extends BaseMobile {
 
         type(nombre, InfoObject.txtNombre);
         logger.info("Se ingresa Nombre.");
+
         type(apellido, InfoObject.txtApellido);
         logger.info("Se ingresa Apellido.");
+
         type(email, InfoObject.txtEmail);
         logger.info("Se ingresa Email.");
+
         scrollTo(InfoObject.ventanaInfo, "up", 400);
         logger.info("Se realiza scroll.");
 
-        if (waitvisibilityBoolean(Duration.ofSeconds(3), InfoObject.txtDireccion)) {
+        if (waitvisibilityBoolean(Duration.ofSeconds(1), InfoObject.txtDireccion)) {
             type(direccion, InfoObject.txtDireccion);
             logger.info("Se ingresa Dirección.");
+
             type(codpostal, InfoObject.txtPostal);
             logger.info("Se ingresa Código postal.");
+
             scrollTo(InfoObject.ventanaInfo, "up", 400);
-            logger.info("Se realiza scroll.");
+            logger.info("Se realiza scroll");
+
             type(ciudad, InfoObject.txtCiudad);
             logger.info("Se ingresa ciudad.");
         }
+
+        scrollTo(InfoObject.ventanaInfo, "up", 200);
+        logger.info("Se realiza scroll");
 
         type(telefono, InfoObject.txtTlf);
         logger.info("Se ingresa teléfono.");
@@ -70,6 +82,7 @@ public class InfoPage extends BaseMobile {
         //Para capturar pantalla con datos sensibles es necesario modificar el FLAG_SECURE del apk a false
         waitvisibility(Duration.ofSeconds(10), InfoObject.btnNextStep);
         logger.info("Se espera que sea visible el botón 'Next step'.");
+
         click(InfoObject.btnNextStep);
         logger.info("Se da click al botón 'Next step'.");
     }

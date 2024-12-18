@@ -21,6 +21,9 @@ Feature: crear reserva
       | codigoPostal       | 08000              |
       | ciudad             | Cusco              |
       | telefono           | 987654321          |
+      | numeroTarjeta      | 455578876544333    |
+      | fechaExpiracion    | 02/25              |
+      | cvcCode            | 152                |
     Then realizo la reserva.
 
   @unHappyPath
@@ -39,4 +42,7 @@ Feature: crear reserva
       | codigoPostal       | 08000              |
       | ciudad             | Cusco              |
       | telefono           | 987654321          |
+      | numeroTarjeta      | 455578876544333    |
+      | fechaExpiracion    | 02/25              |
+      | cvcCode            | 152                |
     Then realizo la reserva.

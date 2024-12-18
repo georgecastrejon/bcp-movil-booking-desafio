@@ -43,6 +43,9 @@ Para ejecutar pruebas en dispositivos físicos:
    - **SAUCE_USERNAME**: Tu nombre de usuario en Sauce Labs.
    - **SAUCE_ACCESS_KEY**: Tu clave de acceso en Sauce Labs.
 
+#### **2.3 Configuración en SauceLabs**
+1. Subir el apk `booking-com-32-9.apk` en la sección App Management
+
 ---
 
 ## **Cómo Usar el Proyecto**

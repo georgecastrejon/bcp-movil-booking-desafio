@@ -6,7 +6,6 @@ import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.*;
 
 public class Hook extends AppiumUtil {
-
     private static Scenario scenario;
 
     @Before

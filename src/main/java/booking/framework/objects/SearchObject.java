@@ -13,7 +13,7 @@ public class SearchObject {
     public static final By btnSelectDates = By.id("com.booking:id/facet_date_picker_confirm");
     public static final By btnRoomsGuest = By.id("com.booking:id/facet_search_box_accommodation_occupancy");
     public static final By panelChildren = By.id("android:id/parentPanel");
-    public static final By selectChildren = By.id("android:id/numberpicker_input");//5 years old
+    public static final By selectChildren = By.id("android:id/numberpicker_input");
     public static final By btnChildrenOk = By.id("android:id/button1");
     public static final By resumenChildren = By.id("com.booking:id/group_config_main_configs");
     public static final By resumenChildrenApply = By.id("com.booking:id/group_config_apply_button");
