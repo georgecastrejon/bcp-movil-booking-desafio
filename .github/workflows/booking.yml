@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: cucumber-reports
-          path: target/cucumber-reports/
+          path: target/site/cucumber-reports
 
       - name: Clean up old reports in gh-pages branch (if exists)
         run: |
