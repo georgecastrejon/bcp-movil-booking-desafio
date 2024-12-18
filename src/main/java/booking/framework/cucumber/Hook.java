@@ -2,22 +2,17 @@ package booking.framework.cucumber;
 
 import booking.framework.helpers.AppiumUtil;
 import booking.framework.helpers.ExceptionMessage;
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.cucumber.java.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class Hook extends AppiumUtil {
-
-    private static final Logger logger = LogManager.getLogger(Hook.class);
     private static Scenario scenario;
 
     @Before
-    public void setScenario(Scenario injectedScenario) throws ExceptionMessage {
+    public void before(Scenario injectedScenario) throws ExceptionMessage {
         try {
-        initDevice();
-        scenario = injectedScenario;
+            initDevice();
+            scenario = injectedScenario;
         } catch (Exception e) {
             throw new ExceptionMessage(e.getMessage());
         }
@@ -26,7 +21,6 @@ public class Hook extends AppiumUtil {
     public static Scenario getScenario() {
         return scenario;
     }
-
 
     @After
     public static void after() throws ExceptionMessage {
@@ -39,7 +33,7 @@ public class Hook extends AppiumUtil {
         }
     }
 
-    public static AndroidDriver<MobileElement> getdriver() {
+    public static AndroidDriver getdriver() {
         return driver;
     }
 }
