@@ -43,7 +43,7 @@ public class SearchPage extends BaseMobile {
     }
 
     public void seleccionarDestino(String destino) throws ExceptionMessage {
-        waitClickable(Duration.ofSeconds(120), SearchObject.btnDestino);
+        waitClickable(Duration.ofSeconds(60), SearchObject.btnDestino);
         logger.info("Se detecta que es clickeable la caja de texto Destino.");
 
         click(SearchObject.btnDestino);
