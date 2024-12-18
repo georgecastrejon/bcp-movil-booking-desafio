@@ -14,6 +14,7 @@ Los resultados de las pruebas se publican automáticamente en **GitHub Pages**.
 QA SR Engineer.
 - [LinkedIn](https://www.linkedin.com/in/gcastrejon/)
 
+---
 
 ## **Requisitos Previos**
 
@@ -88,30 +89,47 @@ Para ejecutar pruebas en dispositivos físicos:
 ### 3. **Ejecución desde GitHub Actions:**
 
 Para utilizar este repositorio y ejecutar las pruebas en tu cuenta de GitHub:
-- Ve a [https://github.com/georgecastrejon/bcp-movil-booking-desafio](https://github.com/georgecastrejon/bcp-movil-booking-desafio).
-- Haz clic en el botón **Fork** en la esquina superior derecha.
 
-1. **Acceder a GitHub Actions:**
+1. **Haz un Fork del Repositorio:**
+   - Ve a [https://github.com/georgecastrejon/bcp-movil-booking-desafio](https://github.com/georgecastrejon/bcp-movil-booking-desafio).
+   - Haz clic en el botón **Fork** en la esquina superior derecha.
+
+2. **Acceder a GitHub Actions:**
     - Dirígete a la pestaña **Actions** de tu repositorio en GitHub.
 
-2. **Seleccionar el Job:**
+3. **Seleccionar el Job:**
     - En el panel izquierdo, busca y haz clic en el job `mobile automation booking CI`.
 
-3. **Iniciar el Workflow:**
+4. **Iniciar el Workflow:**
     - Haz clic en el botón **Run workflow**.
     - Selecciona la rama `master` desde el selector de ramas.
     - Luego, en la opción **Enter device**, escribe el dispositivo que deseas usar para las pruebas (por defecto, está escrito `Samsung Galaxy S9`).
     - Dentro de los corchetes, podrás ver una lista de dispositivos disponibles. Solo debes copiar el nombre del dispositivo que deseas usar y pegarlo en la caja de texto.
     - Luego, haz clic en el botón verde **Run workflow** para iniciar la ejecución.
 
-4. **Monitorear la Ejecución:**
+5. **Monitorear la Ejecución:**
     - Espera unos segundos hasta que el workflow comience a ejecutarse.
     - Una vez iniciado, verás el job `run-mobile-tests` en el flujo de trabajo.
 
-5. **Acceder al Reporte:**
+6. **Acceder al Reporte:**
     - Dentro del job `run-mobile-tests`, ubica el stage **Show GitHub Pages URL**.
     - Este paso mostrará la URL de GitHub Pages en la salida de la ejecución.
     - La URL redirigirá a la página del reporte generado, que se puede visualizar directamente en el navegador.
     - Se debe esperar hasta 5 minutos como máximo para que la nueva versión del reporte sea publicada y lo pueda visualizar correctamente.
 
+7. **Configuración del Reporte:**
+
+   La configuración del reporte solo será necesaria por primera y única vez por cuenta de GitHub, después de ejecutar las pruebas. Sigue estos pasos:
+
+   #### 7.1 **Paso 1: Configuración en GitHub Pages**
+   1. Dirígete a **Settings** de tu repositorio.
+   2. En el menú lateral izquierdo, selecciona **Pages**.
+   3. En la sección **Build and deployment**, localiza la opción **Branch** y selecciona **gh-pages**.
+   4. En la opción **Folder**, selecciona **/(root)**.
+   5. Haz clic en **Save** para guardar la configuración.
+
+   #### 7.2 **Paso 2: Visualizar el Flujo de Trabajo**
+   1. Ve al panel de **Actions**.
+   2. En la lista de trabajos (jobs) a la izquierda, busca y haz clic en el job denominado **pages-build-deployment**.
+   3. Verás que se inicia un nuevo flujo de trabajo que se encargará de publicar el reporte de las pruebas.
 ---
