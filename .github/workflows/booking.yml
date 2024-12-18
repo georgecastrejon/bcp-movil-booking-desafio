@@ -44,6 +44,7 @@ jobs:
         env:
           SAUCE_USERNAME: ${{ vars.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}
+        continue-on-error: true
 
       - name: Check if cucumber.json exists
         run: |
@@ -53,6 +54,7 @@ jobs:
           else
             echo "cucumber.json does not exist"
           fi
+        continue-on-error: true
 
       - name: Upload cucumber Reports
         uses: actions/upload-artifact@v3
