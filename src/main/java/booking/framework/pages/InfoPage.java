@@ -2,7 +2,6 @@ package booking.framework.pages;
 
 import booking.framework.base.BaseMobile;
 
-import booking.framework.cucumber.Hook;
 import booking.framework.helpers.ExceptionMessage;
 import booking.framework.objects.InfoObject;
 import io.appium.java_client.android.AndroidDriver;

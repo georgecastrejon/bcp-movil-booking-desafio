@@ -14,5 +14,4 @@ booking\framework\capabilities\SamplePhysicalAndroid.class
 booking\framework\helpers\ScreenshotUtils.class
 booking\framework\objects\InfoObject.class
 booking\framework\objects\PaymentObject.class
-booking\framework\helpers\InfoRegistro.class
 booking\framework\pages\PaymentPage.class

@@ -1,2 +1,2 @@
-booking\steps\HomeStep.class
 booking\runner\TestRunner.class
+booking\steps\ReservaStep.class
