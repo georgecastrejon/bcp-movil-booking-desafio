@@ -34,7 +34,7 @@ jobs:
           distribution: 'temurin'
 
       - name: Install dependencies
-        run: mvn install -DskipTests
+        run: mvn install -DskipTests -Dskip.cucumber.report=true
         env:
           SAUCE_USERNAME: ${{ vars.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}
