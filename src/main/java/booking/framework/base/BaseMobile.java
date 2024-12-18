@@ -1,5 +1,6 @@
 package booking.framework.base;
 
+import booking.framework.helpers.ExceptionMessage;
 import org.openqa.selenium.WebElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.interactions.PointerInput;
@@ -72,28 +73,39 @@ public class BaseMobile {
         }
     }
 
-    public void clickItemElements(By locatorElements,int nroElementClick, By locatorScroll,int maxWaitTimeSeconds){
-        long startTime = System.currentTimeMillis();
+    public void clickItemElements(By locatorElements, int nroElementClick, By locatorScroll, int maxWaitTimeSeconds) throws ExceptionMessage {
+        try {
+            long startTime = System.currentTimeMillis();
+            boolean isClicked = false;
 
-        while(System.currentTimeMillis() - startTime < maxWaitTimeSeconds * 1000){
-            List<WebElement> elements = driver.findElements(locatorElements);
-            int nroElement = nroElementClick-1;
+            while (System.currentTimeMillis() - startTime < maxWaitTimeSeconds * 1000) {
+                List<WebElement> elements = driver.findElements(locatorElements);
+                int nroElement = nroElementClick - 1;
 
-            System.out.println("############### cantidad de elementos:"+elements.size());
+                System.out.println("############### cantidad de elementos:" + elements.size());
 
-            if(elements.size()>=nroElement){
-                WebElement targetElement  = elements.get(nroElement);
-                System.out.println("#############se tiene eleentos");
+                if (elements.size() >= nroElement) {
+                    WebElement targetElement = elements.get(nroElement);
+                    System.out.println("#############se tiene eleentos");
 
-                boolean isVisible = waitBooleanvisibilityOf(Duration.ofSeconds(1),targetElement);
-                if (isVisible) {
-                    System.out.println("#############elemento visible");
-                    targetElement.click();
-                    break;
+                    boolean isVisible = waitBooleanvisibilityOf(Duration.ofSeconds(1), targetElement);
+                    if (isVisible) {
+                        System.out.println("#############elemento visible");
+                        targetElement.click();
+                        isClicked = true;
+                        break;
+                    }
                 }
+                System.out.println("#############se relaiará un scroll para detectar mas elemntos");
+                scrollTo(locatorScroll, "up", 200);
             }
-            System.out.println("#############se relaiará un scroll para detectar mas elemntos");
-            scrollTo(locatorScroll, "up", 200);
+
+            if (!isClicked) {
+                throw new RuntimeException("No se pudo hacer clic en el elemento después de " + maxWaitTimeSeconds + " segundos.");
+            }
+        }
+        catch (Exception e){
+            throw new ExceptionMessage(e.getMessage());
         }
     }
 
