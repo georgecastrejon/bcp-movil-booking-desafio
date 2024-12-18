@@ -82,21 +82,17 @@ public class BaseMobile {
                 List<WebElement> elements = driver.findElements(locatorElements);
                 int nroElement = nroElementClick - 1;
 
-                System.out.println("############### cantidad de elementos:" + elements.size());
-
-                if (elements.size() >= nroElement) {
+                if (elements.size() > nroElement && nroElement >= 0) {
                     WebElement targetElement = elements.get(nroElement);
-                    System.out.println("#############se tiene eleentos");
 
                     boolean isVisible = waitBooleanvisibilityOf(Duration.ofSeconds(1), targetElement);
                     if (isVisible) {
-                        System.out.println("#############elemento visible");
                         targetElement.click();
                         isClicked = true;
                         break;
                     }
                 }
-                System.out.println("#############se relaiará un scroll para detectar mas elemntos");
+
                 scrollTo(locatorScroll, "up", 200);
             }
 
