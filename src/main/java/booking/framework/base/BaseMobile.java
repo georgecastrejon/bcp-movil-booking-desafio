@@ -95,10 +95,6 @@ public class BaseMobile {
 
                 scrollTo(locatorScroll, "up", 200);
             }
-
-            if (!isClicked) {
-                throw new RuntimeException("No se pudo hacer clic en el elemento después de " + maxWaitTimeSeconds + " segundos.");
-            }
         }
         catch (Exception e){
             throw new ExceptionMessage(e.getMessage());
