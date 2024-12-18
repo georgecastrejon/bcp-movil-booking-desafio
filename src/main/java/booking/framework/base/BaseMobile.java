@@ -76,36 +76,35 @@ public class BaseMobile {
     public void clickItemElements(By locatorElements, int nroElementClick, By locatorScroll, int maxWaitTimeSeconds) throws ExceptionMessage {
         try {
             long startTime = System.currentTimeMillis();
-            System.out.println("Inicio del método. Tiempo máximo de espera: " + maxWaitTimeSeconds + " segundos.");
-
+            //System.out.println("Inicio del método. Tiempo máximo de espera: " + maxWaitTimeSeconds + " segundos.");
 
             while (System.currentTimeMillis() - startTime < maxWaitTimeSeconds * 1000) {
                 List<WebElement> elements = driver.findElements(locatorElements);
-                System.out.println("Cantidad de elementos encontrados: " + elements.size());
+                //System.out.println("Cantidad de elementos encontrados: " + elements.size());
 
                 int nroElement = nroElementClick - 1;
-                System.out.println("Índice del elemento a buscar: " + nroElement);
+                //System.out.println("Índice del elemento a buscar: " + nroElement);
 
                 if (elements.size() > nroElement && nroElement >= 0) {
                     WebElement targetElement = elements.get(nroElement);
-                    System.out.println("Elemento en índice " + nroElement + " encontrado: " + targetElement.toString());
+                    //System.out.println("Elemento en índice " + nroElement + " encontrado: " + targetElement.toString());
 
                     boolean isVisible = waitBooleanvisibilityOf(Duration.ofSeconds(1), targetElement);
-                    System.out.println("¿Elemento visible? " + isVisible);
+                    //System.out.println("¿Elemento visible? " + isVisible);
 
                     if (isVisible) {
-                        System.out.println("Haciendo clic en el elemento...");
+                        //System.out.println("Haciendo clic en el elemento...");
                         targetElement.click();
-                        System.out.println("Clic realizado con éxito.");
+                        //System.out.println("Clic realizado con éxito.");
                         return;
-                    }else {
-                        System.out.println("Elemento no visible. Realizando scroll...");
+                    } else {
+                        scrollTo(locatorScroll, "up", 300);
+                        //System.out.println("Elemento no visible. Realizando scroll...");
                     }
                 } else {
-                    System.out.println("El índice " + nroElement + " no está en el rango válido. Realizando scroll...");
+                    scrollTo(locatorScroll, "up", 300);
+                    //System.out.println("El índice " + nroElement + " no está en el rango válido. Realizando scroll...");
                 }
-
-                scrollTo(locatorScroll, "up", 200);
             }
 
             throw new RuntimeException("No se pudo hacer clic en el elemento después de " + maxWaitTimeSeconds + " segundos.");
