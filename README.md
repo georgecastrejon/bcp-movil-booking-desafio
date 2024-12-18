@@ -10,9 +10,10 @@ Los resultados de las pruebas se publican automáticamente en **GitHub Pages**.
 ---
 
 ## Autor
-**[George Castrejon Sandoval]**
-QA SR Engineer.
-- [LinkedIn](https://www.linkedin.com/in/gcastrejon/)
+**George Castrejon Sandoval**  
+*QA Senior Engineer*
+
+Conéctate conmigo en [LinkedIn](https://www.linkedin.com/in/gcastrejon/)
 
 ---
 
