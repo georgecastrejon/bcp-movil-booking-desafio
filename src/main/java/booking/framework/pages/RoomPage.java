@@ -22,6 +22,9 @@ public class RoomPage extends BaseMobile {
         waitElementLocated(Duration.ofSeconds(60), RoomObject.btnSort);
         logger.info("Se espera que sea visible el botón 'Sort'.");
 
+        waitvisibility(Duration.ofSeconds(30),RoomObject.panelResultadosHotel);
+        logger.info("Se espera que sea visible el 'panel de resultados'.");
+
         clickItemElements(RoomObject.totalOptionRoom,2,RoomObject.panelResultadosHotel,10);
         logger.info("Se da click al segundo resultado de la búsqueda.");
 

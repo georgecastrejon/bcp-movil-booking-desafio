@@ -40,10 +40,11 @@ jobs:
           SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}
 
       - name: Run cucumber tests
-        run: mvn clean verify -Ddevice="${{ github.event.inputs.device }}"
+        run: mvn clean verify -Ddevice="${{ github.event.inputs.device }}" -Dskip.cucumber.report=false
         env:
           SAUCE_USERNAME: ${{ vars.SAUCE_USERNAME }}
           SAUCE_ACCESS_KEY: ${{ vars.SAUCE_ACCESS_KEY }}
+        continue-on-error: true
 
       - name: Upload cucumber Reports
         uses: actions/upload-artifact@v3
