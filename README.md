@@ -100,6 +100,8 @@ Para utilizar este repositorio y ejecutar las pruebas en tu cuenta de GitHub:
 3. **Iniciar el Workflow:**
     - Haz clic en el botón **Run workflow**.
     - Selecciona la rama `master` desde el selector de ramas.
+    - Luego, en la opción **Enter device**, escribe el dispositivo que deseas usar para las pruebas (por defecto, está escrito `Samsung Galaxy S9`).
+    - Dentro de los corchetes, podrás ver una lista de dispositivos disponibles. Solo debes copiar el nombre del dispositivo que deseas usar y pegarlo en la caja de texto.
     - Luego, haz clic en el botón verde **Run workflow** para iniciar la ejecución.
 
 4. **Monitorear la Ejecución:**
@@ -110,6 +112,6 @@ Para utilizar este repositorio y ejecutar las pruebas en tu cuenta de GitHub:
     - Dentro del job `run-mobile-tests`, ubica el stage **Show GitHub Pages URL**.
     - Este paso mostrará la URL de GitHub Pages en la salida de la ejecución.
     - La URL redirigirá a la página del reporte generado, que se puede visualizar directamente en el navegador.
-    - Se debe esperar 5 minutos para que la nueva versión del reporte sea publicada y lo pueda visualizar correctamente.
+    - Se debe esperar hasta 5 minutos como máximo para que la nueva versión del reporte sea publicada y lo pueda visualizar correctamente.
 
 ---
