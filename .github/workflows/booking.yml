@@ -33,6 +33,9 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
 
+      - name: Create Required Directories
+        run: mkdir -p target/cucumber-reports
+
       - name: Install dependencies
         run: mvn install -DskipTests
         env:
