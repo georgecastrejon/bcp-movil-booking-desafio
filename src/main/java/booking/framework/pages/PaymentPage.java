@@ -30,9 +30,10 @@ public class PaymentPage extends BaseMobile {
         type(fechaExpiracion, PaymentObject.txtFechaExpiracion);
         logger.info("Se ingresa Fecha de expiración.");
 
-        waitClickable(Duration.ofSeconds(1), PaymentObject.txtcvcCode);
-        type(cvcCode, PaymentObject.txtcvcCode);
-        logger.info("Se ingresa CVC Code.");
+        if(waitvisibilityBoolean(Duration.ofSeconds(2), PaymentObject.txtcvcCode)){
+            type(cvcCode, PaymentObject.txtcvcCode);
+            logger.info("Se ingresa CVC Code.");
+        }
 
         waitClickable(Duration.ofSeconds(1), PaymentObject.btnReservar);
         click(PaymentObject.btnReservar);
