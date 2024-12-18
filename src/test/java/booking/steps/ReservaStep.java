@@ -15,25 +15,20 @@ public class ReservaStep extends TestBase {
     @Given("deseo realizar una reserva para dos adultos y un niño")
     public void deseorealizarunareservaparadosadultosyunnino() throws ExceptionMessage {
         searchPage.validateAlerts();
-        throw new ExceptionMessage("error");
     }
 
     @When("ingreso los datos correspondientes")
     public void ingresoLosDatosCorrespondientes(DataTable dataTable) throws Exception {
-        /*datosReserva = dataTable.asMap(String.class, String.class);
+        datosReserva = dataTable.asMap(String.class, String.class);
         searchPage.buscarAlojamiento(datosReserva);
         roomPage.seleccionarHabitaciones();
         infoPage.registrarDatos(datosReserva);
-
-         */
     }
 
     @Then("realizo la reserva.")
     public void realizolareserva(){
-        /*if(infoPage.reservarConPago()){
+        if(infoPage.reservarConPago()){
             paymentPage.registrarPago(datosReserva);
         }
-
-         */
     }
 }
